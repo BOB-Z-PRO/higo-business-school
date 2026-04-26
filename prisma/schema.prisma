@@ -86,6 +86,8 @@ model Course {
   order       Int      @default(0)
   moduleId    String   @map("module_id")
   module      Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  teacherId   String?  @map("teacher_id")
+  teacher     Teacher? @relation(fields: [teacherId], references: [id])
   attachments Attachment[]
   enrollments Enrollment[]
   progress    CourseProgress[]
