@@ -1,13 +1,20 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
 export const metadata: Metadata = {
-  title: 'HIGO商学院',
-  description: '从产品消费者到事业经营者的完整成长路径',
+  title: 'HIGO商学院 - 从产品消费者到事业经营者',
+  description: 'HIGO商学院是在线学习管理系统，提供从产品消费者到事业经营者的完整成长路径。',
   manifest: '/manifest.json',
+  icons: {
+    icon: '/favicon.ico',
+  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#10b981',
 }
 
 export default function RootLayout({
@@ -17,10 +24,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
-          {children}
-        </div>
+      <body className="antialiased">
+        {children}
       </body>
     </html>
   )
