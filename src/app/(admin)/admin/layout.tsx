@@ -9,9 +9,11 @@ import { useEffect } from 'react'
 const adminNav = [
   { href: '/admin', label: '控制台', icon: 'fa-th-large' },
   { href: '/admin/users', label: '用户管理', icon: 'fa-users' },
-  { href: '/admin/courses', label: '课程管理', icon: 'fa-book' },
   { href: '/admin/schools', label: '学院管理', icon: 'fa-university' },
   { href: '/admin/chapters', label: '篇章管理', icon: 'fa-layer-group' },
+  { href: '/admin/modules', label: '模块管理', icon: 'fa-folder' },
+  { href: '/admin/courses', label: '课程管理', icon: 'fa-book' },
+  { href: '/admin/settings', label: '网站设置', icon: 'fa-cog' },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

@@ -11,7 +11,7 @@ export async function GET() {
         name: true,
         description: true,
         order: true,
-        chapter: { select: { name: true } },
+        chapter: { select: { id: true, name: true } },
         _count: { select: { courses: true } },
       },
       orderBy: { order: 'asc' },
