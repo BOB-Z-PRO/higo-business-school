@@ -3,19 +3,19 @@
 import Link from 'next/link'
 
 const schools = [
-  { id: 'new', name: '新人成长学院', subtitle: '生存家园 · 入门第一步', icon: '🌱', color: '#38A169', gradient: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', courses: 10, duration: '约15天', tags: ['公司篇', '产品篇', '经营篇'] },
+  { id: 'new', name: '新人成长学院', subtitle: '新人入门，了解HIGO', icon: '🌱', color: '#38A169', gradient: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', courses: 10, duration: '约15天', tags: ['公司篇', '产品篇', '经营篇'] },
   { id: 'svip', name: '初阶领导力学院', subtitle: '生活家园 · 生存技能', icon: '🔮', color: '#3182CE', gradient: 'linear-gradient(135deg, #3182CE 0%, #63B3ED 100%)', courses: 10, duration: '约30天', tags: ['经营篇', '团队篇', '心态篇'] },
   { id: 'diamond', name: '中阶领导力学院', subtitle: '生活家园 · 团队建设', icon: '💎', color: '#805AD5', gradient: 'linear-gradient(135deg, #805AD5 0%, #B794F4 100%)', courses: 10, duration: '约60天', tags: ['团队篇', '产品篇', '心态篇'] },
   { id: 'black', name: '高阶领导力学院', subtitle: '生命家园 · 领袖传承', icon: '👑', color: '#D69E2E', gradient: 'linear-gradient(135deg, #D69E2E 0%, #F6E05E 100%)', courses: 10, duration: '约90天', tags: ['团队篇', '心态篇', '经营篇'] },
 ]
 
 const chapters = [
-  { name: '公司篇', icon: '🏢', color: '#D69E2E', bgColor: '#FEFCBF', description: '了解HIGO是谁，建立信任基础', tags: ['FDA认证', '全球布局'] },
-  { name: '产品篇', icon: '🧬', color: '#38A169', bgColor: '#C6F6D5', description: '掌握产品知识，具备销售能力', tags: ['GnAKG', 'GnCELL'] },
-  { name: '经营篇', icon: '📈', color: '#3182CE', bgColor: '#BEE3F8', description: '学习经营方法，会做市场', tags: ['成功九步', 'ABC法则'] },
-  { name: '团队篇', icon: '👥', color: '#805AD5', bgColor: '#E9D8FD', description: '建设团队，实现被动收入', tags: ['团队启动', '会议体系'] },
-  { name: '心态篇', icon: '❤️', color: '#E53E3E', bgColor: '#FED7D7', description: '五大心态、情绪管理，稳定压倒一切', tags: ['贯穿始终'] },
-  { name: '实操篇', icon: '🎯', color: '#DD6B20', bgColor: '#FEEBC8', description: '实战演练，即学即用，快速落地', tags: ['话术练习', '邀约技巧'] },
+  { name: '公司篇', icon: '🏢', color: '#D69E2E', bgColor: '#FEFCBF', description: '了解HIGO是谁，建立信任基础', tags: ['FDA认证', '全球布局'], slug: 'company' },
+  { name: '产品篇', icon: '🧬', color: '#38A169', bgColor: '#C6F6D5', description: '掌握产品知识，具备销售能力', tags: ['GnAKG', 'GnCELL'], slug: 'product' },
+  { name: '经营篇', icon: '📈', color: '#3182CE', bgColor: '#BEE3F8', description: '学习经营方法，会做市场', tags: ['成功九步', 'ABC法则'], slug: 'business' },
+  { name: '团队篇', icon: '👥', color: '#805AD5', bgColor: '#E9D8FD', description: '建设团队，实现被动收入', tags: ['团队启动', '会议体系'], slug: 'team' },
+  { name: '心态篇', icon: '❤️', color: '#E53E3E', bgColor: '#FED7D7', description: '五大心态、情绪管理，稳定压倒一切', tags: ['贯穿始终'], slug: 'mindset' },
+  { name: '实操篇', icon: '🎯', color: '#DD6B20', bgColor: '#FEEBC8', description: '实战演练，即学即用，快速落地', tags: ['话术练习', '邀约技巧'], slug: 'practice' },
 ]
 
 const learningSteps = [
@@ -130,7 +130,7 @@ export default function HomePage() {
                       <span key={tag} className="school-tag">{tag}</span>
                     ))}
                   </div>
-                  <Link href={school.id === 'new' ? '/schools/new' : school.id === 'svip' ? '/schools/svip' : school.id === 'diamond' ? '/schools/diamond' : '/schools/black'} className="school-btn" style={{ background: school.gradient }}>
+                  <Link href={`/school/${school.id}`} className="school-btn" style={{ background: school.gradient }}>
                     开始学习 <i className="fas fa-arrow-right"></i>
                   </Link>
                 </div>
@@ -187,7 +187,7 @@ export default function HomePage() {
           </div>
           <div className="chapters-grid">
             {chapters.map((chapter) => (
-              <Link key={chapter.name} href="/" className="chapter-card">
+              <Link key={chapter.name} href={`/chapters/${chapter.slug}`} className="chapter-card">
                 <div className="chapter-bar" style={{ background: `linear-gradient(90deg, ${chapter.color}, ${chapter.color}80)` }}></div>
                 <div className="chapter-content">
                   <div className="chapter-icon-box" style={{ background: chapter.bgColor }}>
@@ -351,7 +351,7 @@ export default function HomePage() {
             <i className="fas fa-home"></i>
             <span>首页</span>
           </Link>
-          <Link href="/schools" className="mobile-nav-item">
+          <Link href="/course" className="mobile-nav-item">
             <i className="fas fa-graduation-cap"></i>
             <span>学院</span>
           </Link>
