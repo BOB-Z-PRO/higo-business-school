@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
+import { ArrowLeft, BookOpen, Clock, CheckCircle, TrendingUp, Users, Star, Award, Target, Heart, Zap } from 'lucide-react'
 
 const schoolsData: Record<string, {
   name: string
@@ -11,6 +12,7 @@ const schoolsData: Record<string, {
   gradientStart: string
   gradientEnd: string
   badge: string
+  badgeIcon: string
   description: string
   stats: { num: string; label: string }[]
   chapters: {
@@ -21,15 +23,31 @@ const schoolsData: Record<string, {
     description: string
     courses: { id: string; num: string; title: string; subtitle: string; duration: string; category: string; categoryClass: string }[]
   }[]
+  overview: {
+    title: string
+    content: string[]
+  }
+  teachers: {
+    name: string
+    title: string
+    avatar: string
+    color: string
+  }[]
+  rules: {
+    icon: string
+    title: string
+    desc: string
+  }[]
 }> = {
   'new': {
     name: '新人成长学院',
-    subtitle: '了解HIGO、建立信心、学会开口 — 入门的必经之路',
+    subtitle: '新人入门，了解HIGO',
     icon: '🌱',
     gradient: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)',
     gradientStart: '#38A169',
     gradientEnd: '#68D391',
     badge: '生存家园',
+    badgeIcon: 'fa-seedling',
     description: '新人成长学院是每一位HIGO伙伴的起点。我们致力于帮助新人快速了解HIGO、掌握基础技能，建立对产品和事业信心。',
     stats: [
       { num: '10', label: '课程数量' },
@@ -75,6 +93,26 @@ const schoolsData: Record<string, {
         ],
       },
     ],
+    overview: {
+      title: '学院介绍',
+      content: [
+        '新人成长学院是每一位HIGO伙伴的起点，承载着帮助新人快速入门的重要使命。',
+        '在新人成长学院，您将系统学习HIGO公司背景、产品知识、商业模式和基础销售技能。',
+        '我们相信，只有真正了解HIGO、认可产品、掌握方法的伙伴，才能在这条路上走得更远。',
+        '完成本学院全部课程后，您将具备独立开展业务的能力，为进入下一阶段打下坚实基础。'
+      ]
+    },
+    teachers: [
+      { name: '曹玥宏', title: '新人成长学院院长', avatar: '👨‍🏫', color: '#38A169' },
+      { name: '徐莉', title: '产品培训导师', avatar: '👩‍🔬', color: '#3182CE' },
+      { name: '张杰', title: '销售技能导师', avatar: '👨‍💼', color: '#805AD5' },
+    ],
+    rules: [
+      { icon: 'fa-check', title: '完成全部课程', desc: '学习本学院全部10门课程' },
+      { icon: 'fa-pencil', title: '通过课后测验', desc: '每门课程结束后完成测验，总分80分以上' },
+      { icon: 'fa-comments', title: '参与早会学习', desc: '积极参加线上早会，学习他人经验' },
+      { icon: 'fa-user-plus', title: '完成首次分享', desc: '至少完成一次产品或机会分享' },
+    ]
   },
   'svip': {
     name: '初阶领导力学院',
@@ -84,6 +122,7 @@ const schoolsData: Record<string, {
     gradientStart: '#3182CE',
     gradientEnd: '#63B3ED',
     badge: '生活家园',
+    badgeIcon: 'fa-star',
     description: '初阶领导力学院帮助你从"自己干"转变为"带人干"，学会团队建设的基础技能。',
     stats: [
       { num: '10', label: '课程数量' },
@@ -125,6 +164,26 @@ const schoolsData: Record<string, {
         ],
       },
     ],
+    overview: {
+      title: '学院介绍',
+      content: [
+        '初阶领导力学院是帮助您从"自己干"转变为"带人干"的关键阶段。',
+        '在这里，您将学习如何建立团队、招募新人、复制团队技能。',
+        '我们注重实战，通过成功九步法、形象价值等核心课程，帮助您建立领导力基础。',
+        '完成本学院学习后，您将具备独立带团队的能力，开启事业的新篇章。'
+      ]
+    },
+    teachers: [
+      { name: '潘玮宸', title: '初阶领导力学院院长', avatar: '👨‍🎓', color: '#3182CE' },
+      { name: '高代华', title: '团队建设导师', avatar: '👨‍👥', color: '#805AD5' },
+      { name: '玫秀', title: '领导力导师', avatar: '👩‍💼', color: '#38A169' },
+    ],
+    rules: [
+      { icon: 'fa-check', title: '完成全部课程', desc: '学习本学院全部10门课程' },
+      { icon: 'fa-users', title: '建立3人小组', desc: '成功招募并带动3位伙伴加入' },
+      { icon: 'fa-microphone', title: '主持一次早会', desc: '独立组织并主持一场早会' },
+      { icon: 'fa-chart-line', title: '达成月度目标', desc: '完成设定的个人月度业绩目标' },
+    ]
   },
   'diamond': {
     name: '中阶领导力学院',
@@ -134,6 +193,7 @@ const schoolsData: Record<string, {
     gradientStart: '#805AD5',
     gradientEnd: '#B794F4',
     badge: '生活家园',
+    badgeIcon: 'fa-gem',
     description: '中阶领导力学院专注于团队复制与绩效提升，培养核心骨干。',
     stats: [
       { num: '10', label: '课程数量' },
@@ -175,6 +235,26 @@ const schoolsData: Record<string, {
         ],
       },
     ],
+    overview: {
+      title: '学院介绍',
+      content: [
+        '中阶领导力学院是培养核心骨干的重要阶段。',
+        '在这里，您将学习如何复制团队、建立高效的会议体系和沟通机制。',
+        '我们注重系统化思维，帮助您从单点突破转向全面团队管理。',
+        '完成本学院学习后，您将具备打造高绩效团队的能力。'
+      ]
+    },
+    teachers: [
+      { name: '江勋源', title: '中阶领导力学院院长', avatar: '👨‍⚖️', color: '#805AD5' },
+      { name: '如云', title: '团队复制导师', avatar: '👨‍🔧', color: '#D69E2E' },
+      { name: '顺米', title: '绩效提升导师', avatar: '👩‍🏫', color: '#E53E3E' },
+    ],
+    rules: [
+      { icon: 'fa-check', title: '完成全部课程', desc: '学习本学院全部10门课程' },
+      { icon: 'fa-user-friends', title: '培养5位核心', desc: '成功培养5位核心骨干' },
+      { icon: 'fa-calendar-alt', title: '建立会议体系', desc: '建立并运营团队周会体系' },
+      { icon: 'fa-trophy', title: '达成团队目标', desc: '带领团队完成季度业绩目标' },
+    ]
   },
   'black': {
     name: '高阶领导力学院',
@@ -184,6 +264,7 @@ const schoolsData: Record<string, {
     gradientStart: '#D69E2E',
     gradientEnd: '#F6E05E',
     badge: '生命家园',
+    badgeIcon: 'fa-crown',
     description: '高阶领导力学院学习战略规划和组织文化建设，成为真正的领袖。',
     stats: [
       { num: '10', label: '课程数量' },
@@ -225,6 +306,26 @@ const schoolsData: Record<string, {
         ],
       },
     ],
+    overview: {
+      title: '学院介绍',
+      content: [
+        '高阶领导力学院是成就领袖的殿堂。',
+        '在这里，您将学习战略规划、组织文化和永续发展的核心智慧。',
+        '我们注重领袖品质培养，帮助您建立真正的影响力。',
+        '完成本学院学习后，您将成为真正的领袖，开启事业的新纪元。'
+      ]
+    },
+    teachers: [
+      { name: '总顾问团', title: '高阶领导力学院导师组', avatar: '👑', color: '#D69E2E' },
+      { name: '国际顾问', title: '全球战略导师', avatar: '🌍', color: '#3182CE' },
+      { name: '文化顾问', title: '组织文化导师', avatar: '🏛️', color: '#805AD5' },
+    ],
+    rules: [
+      { icon: 'fa-check', title: '完成全部课程', desc: '学习本学院全部10门课程' },
+      { icon: 'fa-star', title: '达成SVIP级别', desc: '晋升为至少一星SVIP' },
+      { icon: 'fa-building', title: '建立组织架构', desc: '建立完整的团队组织架构' },
+      { icon: 'fa-infinity', title: '制定传承计划', desc: '制定事业传承和永续发展计划' },
+    ]
   },
 }
 
@@ -235,10 +336,10 @@ export default function SchoolDetailPage() {
 
   if (!school) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">学院不存在</h1>
-          <Link href="/" className="text-emerald-600 hover:text-emerald-700">返回首页</Link>
+      <div className="min-h-screen" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-light)' }}>
+        <div style={{ textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '16px', color: 'var(--text-dark)' }}>学院不存在</h1>
+          <Link href="/" style={{ color: 'var(--primary-blue)' }}>返回首页</Link>
         </div>
       </div>
     )
@@ -247,7 +348,7 @@ export default function SchoolDetailPage() {
   const totalCourses = school.chapters.reduce((sum, ch) => sum + ch.courses.length, 0)
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
       {/* Header */}
       <header className="header">
         <div className="header-inner">
@@ -275,7 +376,7 @@ export default function SchoolDetailPage() {
           <div className="school-header-content">
             <div className="school-logo">{school.icon}</div>
             <div className="school-info">
-              <span className="school-badge"><i className="fas fa-seedling"></i> {school.badge}</span>
+              <span className="school-badge"><i className={`fas ${school.badgeIcon}`}></i> {school.badge}</span>
               <h1>{school.name}</h1>
               <p>{school.subtitle}</p>
               <div className="school-stats">
@@ -295,10 +396,10 @@ export default function SchoolDetailPage() {
       <nav className="school-nav">
         <div className="container">
           <div className="school-nav-inner">
-            <Link href={`/school/${slug}`} className="school-nav-item active">课程列表</Link>
-            <Link href={`/school/${slug}#overview`} className="school-nav-item">学院介绍</Link>
-            <Link href={`/school/${slug}#teachers`} className="school-nav-item">导师团队</Link>
-            <Link href={`/school/${slug}#rules`} className="school-nav-item">学习规范</Link>
+            <a href="#courses" className="school-nav-item active">课程列表</a>
+            <a href="#overview" className="school-nav-item">学院介绍</a>
+            <a href="#teachers" className="school-nav-item">导师团队</a>
+            <a href="#rules" className="school-nav-item">学习规范</a>
           </div>
         </div>
       </nav>
@@ -317,7 +418,7 @@ export default function SchoolDetailPage() {
       </section>
 
       {/* Course List */}
-      <section className="section">
+      <section className="section" id="courses">
         <div className="container">
           {school.chapters.map((chapter) => (
             <div key={chapter.id} className="chapter-section">
@@ -358,6 +459,71 @@ export default function SchoolDetailPage() {
                 <h3 style={{ color: 'white' }}>毕业条件</h3>
                 <span style={{ opacity: '0.9' }}>完成全部{totalCourses}门课程 + 课后测验总分80分以上</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="section" id="overview" style={{ background: 'var(--bg-gray)' }}>
+        <div className="container">
+          <div className="overview-section">
+            <h3 className="overview-title">
+              <i className={`fas ${school.badgeIcon}`} style={{ color: school.gradientStart }}></i>
+              {school.overview.title}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {school.overview.content.map((paragraph, index) => (
+                <p key={index} style={{ color: 'var(--text-gray)', lineHeight: 1.8 }}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Teachers Section */}
+      <section className="section" id="teachers">
+        <div className="container">
+          <div className="overview-section">
+            <h3 className="overview-title">
+              <Users size={24} style={{ color: school.gradientStart }} />
+              导师团队
+            </h3>
+            <div className="teachers-grid">
+              {school.teachers.map((teacher) => (
+                <div key={teacher.name} className="teacher-card">
+                  <div className="teacher-avatar" style={{ background: teacher.color + '20', color: teacher.color }}>
+                    {teacher.avatar}
+                  </div>
+                  <div className="teacher-name">{teacher.name}</div>
+                  <div className="teacher-title">{teacher.title}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rules Section */}
+      <section className="section" id="rules" style={{ background: 'var(--bg-gray)' }}>
+        <div className="container">
+          <div className="overview-section">
+            <h3 className="overview-title">
+              <Target size={24} style={{ color: school.gradientStart }} />
+              学习规范
+            </h3>
+            <div className="rules-list">
+              {school.rules.map((rule, index) => (
+                <div key={index} className="rule-item">
+                  <div className="rule-icon">
+                    <i className={`fas ${rule.icon}`}></i>
+                  </div>
+                  <div className="rule-content">
+                    <div className="rule-title">{rule.title}</div>
+                    <div className="rule-desc">{rule.desc}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

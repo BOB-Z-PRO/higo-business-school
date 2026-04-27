@@ -340,6 +340,433 @@ h4 { font-size: 1.25rem; font-weight: 600; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ========================================
+   Glass Morphism
+   ======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   Card
+   ======================================== */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   Gradient Text
+   ======================================== */
+.gradient-text {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Content Wrapper
+   ======================================== */
+.content-wrapper {
+  min-height: 100vh;
+}
+
+/* ========================================
+   Aspect Video
+   ======================================== */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+/* ========================================
+   Course Detail Page
+   ======================================== */
+.course-detail-header {
+  background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%);
+  color: white;
+  padding: 80px 0 60px;
+}
+
+.course-detail-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  margin-top: -40px;
+}
+
+.course-detail-main {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.course-detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+}
+
+.sidebar-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chapter-list {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.chapter-item {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chapter-item:last-child {
+  border-bottom: none;
+}
+
+.chapter-item:hover {
+  background: var(--bg-gray);
+}
+
+.chapter-item.active {
+  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+}
+
+.chapter-num {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  flex-shrink: 0;
+}
+
+.chapter-item.active .chapter-num {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.chapter-info {
+  flex: 1;
+}
+
+.chapter-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.chapter-duration {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.detail-section {
+  margin-bottom: 32px;
+}
+
+.detail-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+.detail-content {
+  background: var(--bg-gray);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+.detail-content p {
+  line-height: 1.8;
+  margin-bottom: 12px;
+  color: var(--text-gray);
+}
+
+.detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.key-point {
+  background: white;
+  border-left: 4px solid var(--primary-blue);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 16px 0;
+}
+
+.key-point strong {
+  color: var(--primary-dark);
+}
+
+.quote-box {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* ========================================
+   Chapter Detail Page
+   ======================================== */
+.chapter-detail-header {
+  padding: 80px 0 60px;
+  color: white;
+  position: relative;
+}
+
+.chapter-detail-content {
+  margin-top: -40px;
+}
+
+/* ========================================
+   Course Item in List
+   ======================================== */
+.course-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.course-item:last-child {
+  border-bottom: none;
+}
+
+.course-item:hover {
+  background: var(--bg-gray);
+}
+
+.course-item-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.course-item-info {
+  flex: 1;
+}
+
+.course-item-title {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.course-item-meta {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+}
+
+.course-item-action {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   Overview/About Sections
+   ======================================== */
+.overview-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.overview-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overview-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: var(--primary-gradient);
+  border-radius: 2px;
+}
+
+.teachers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.teacher-card {
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-gray);
+  border-radius: var(--radius-lg);
+}
+
+.teacher-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.teacher-name {
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.teacher-title {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-gray);
+  border-radius: var(--radius-md);
+}
+
+.rule-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rule-content {
+  flex: 1;
+}
+
+.rule-title {
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.rule-desc {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media (max-width: 1024px) {
+  .course-detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .course-detail-sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .teachers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .course-detail-header {
+    padding: 40px 0 80px;
+  }
+
+  .course-detail-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-detail-header {
+    padding: 40px 0 100px;
+  }
+}
+
+/* ========================================
    School Header
    ======================================== */
 .school-header {
