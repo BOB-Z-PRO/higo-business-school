@@ -43,6 +43,7 @@ export default function HomePage() {
             <Link href="/#chapters" className="nav-link">六大篇章</Link>
             <Link href="/course" className="nav-link">全部课程</Link>
             <Link href="/#about" className="nav-link">关于我们</Link>
+            <Link href="/login" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>登录</Link>
           </nav>
         </div>
       </header>
@@ -360,7 +361,7 @@ export default function HomePage() {
             <i className="fas fa-th-large"></i>
             <span>六大体系</span>
           </Link>
-          <Link href="/" className="mobile-nav-item">
+          <Link href="/profile" className="mobile-nav-item">
             <i className="fas fa-user"></i>
             <span>我的</span>
           </Link>
