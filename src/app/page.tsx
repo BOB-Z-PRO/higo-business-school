@@ -151,39 +151,27 @@ export default function HomePage() {
           <div className="learning-path-wrapper">
             <div className="learning-path-grid">
               {learningSteps.map((step, index) => (
-                <div key={step.name} className="learning-path-card" style={{ borderLeftColor: step.color, borderLeftWidth: 4 }}>
-                  <div className="path-row">
-                    <div className="path-icon-circle" style={{ background: step.color }}>
-                      <span className="path-emoji">{step.icon}</span>
+                <div key={step.name} className="learning-path-card combined" style={{ background: `linear-gradient(135deg, ${step.color}15, ${step.color}05)`, border: `2px solid ${step.color}30` }}>
+                  <div className="path-main" style={{ borderBottom: `2px solid ${step.color}20`, paddingBottom: 16, marginBottom: 12 }}>
+                    <div className="path-row">
+                      <div className="path-icon-circle" style={{ background: step.color }}>
+                        <span className="path-emoji">{step.icon}</span>
+                      </div>
+                      {index < learningSteps.length - 1 && <span className="path-arrow-right" style={{ color: step.color }}>→</span>}
+                      <div className="path-info">
+                        <h4 className="path-name">{step.name}</h4>
+                        <p className="path-range">{step.range}</p>
+                        <span className="path-level" style={{ background: step.color + '25', color: step.color }}>{step.level}</span>
+                      </div>
                     </div>
-                    {index < learningSteps.length - 1 && <span className="path-arrow-right">→</span>}
-                    <div className="path-info">
-                      <h4 className="path-name">{step.name}</h4>
-                      <p className="path-range">{step.range}</p>
-                      <span className="path-level" style={{ background: step.color + '20', color: step.color }}>{step.level}</span>
-                    </div>
+                    <p className="path-desc" style={{ marginTop: 12 }}>{step.desc}</p>
                   </div>
-                  <p className="path-desc">{step.desc}</p>
+                  <div className="path-footer-item" style={{ background: step.color + '15', borderColor: step.color + '60' }}>
+                    <span>{index === 0 ? '新人入门' : index === 1 ? '一星~三星SVIP' : index === 2 ? '一星~三星钻石' : '一星~三星黑钻'}</span>
+                    <small>{index === 0 ? '了解HIGO' : index === 1 ? '初阶领导力' : index === 2 ? '中阶领导力' : '高阶领导力'}</small>
+                  </div>
                 </div>
               ))}
-            </div>
-            <div className="path-footer">
-              <div className="path-footer-item" style={{ background: '#38A16920', borderColor: '#38A169' }}>
-                <span>新人入门</span>
-                <small>了解HIGO</small>
-              </div>
-              <div className="path-footer-item" style={{ background: '#68D39120', borderColor: '#68D391' }}>
-                <span>一星~三星SVIP</span>
-                <small>初阶领导力</small>
-              </div>
-              <div className="path-footer-item" style={{ background: '#B794F420', borderColor: '#B794F4' }}>
-                <span>一星~三星钻石</span>
-                <small>中阶领导力</small>
-              </div>
-              <div className="path-footer-item" style={{ background: '#F6E05E20', borderColor: '#F6E05E' }}>
-                <span>一星~三星黑钻</span>
-                <small>高阶领导力</small>
-              </div>
             </div>
           </div>
         </div>
