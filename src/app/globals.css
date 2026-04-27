@@ -731,6 +731,36 @@ h4 { font-size: 1.25rem; font-weight: 600; }
 }
 
 /* ========================================
+   Module Card
+   ======================================== */
+.module-card {
+  border: 1px solid var(--border);
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-blue);
+}
+
+/* ========================================
+   Product Card
+   ======================================== */
+.product-card {
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.product-header.akg { background: linear-gradient(135deg, #805AD5, #B794F4); }
+.product-header.cell { background: linear-gradient(135deg, #38A169, #68D391); }
+.product-header.hormone { background: linear-gradient(135deg, #ED8936, #F6AD55); }
+.product-header.brain { background: linear-gradient(135deg, #3182CE, #63B3ED); }
+
+/* ========================================
    Responsive Adjustments
    ======================================== */
 @media (max-width: 1024px) {
