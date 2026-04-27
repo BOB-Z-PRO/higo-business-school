@@ -352,13 +352,17 @@ export default function HomePage() {
             <i className="fas fa-home"></i>
             <span>首页</span>
           </Link>
-          <Link href="/course" className="mobile-nav-item">
-            <i className="fas fa-graduation-cap"></i>
-            <span>学院</span>
+          <Link href="/#schools" className="mobile-nav-item">
+            <i className="fas fa-university"></i>
+            <span>四大学院</span>
           </Link>
-          <Link href="/course" className="mobile-nav-item">
-            <i className="fas fa-book"></i>
-            <span>课程</span>
+          <Link href="/chapters" className="mobile-nav-item">
+            <i className="fas fa-th-large"></i>
+            <span>六大体系</span>
+          </Link>
+          <Link href="/" className="mobile-nav-item">
+            <i className="fas fa-user"></i>
+            <span>我的</span>
           </Link>
         </div>
       </footer>
