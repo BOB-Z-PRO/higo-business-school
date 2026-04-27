@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const schools = [
   { id: 'new', name: '新人成长学院', subtitle: '新人入门，了解HIGO', icon: '🌱', color: '#38A169', gradient: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', courses: 10, duration: '约15天', tags: ['公司篇', '产品篇', '经营篇'] },
-  { id: 'svip', name: '初阶领导力学院', subtitle: '生活家园 · 生存技能', icon: '🔮', color: '#3182CE', gradient: 'linear-gradient(135deg, #3182CE 0%, #63B3ED 100%)', courses: 10, duration: '约30天', tags: ['经营篇', '团队篇', '心态篇'] },
+  { id: 'svip', name: '初阶领导力学院', subtitle: '生存家园 · 入门第一步', icon: '🔮', color: '#3182CE', gradient: 'linear-gradient(135deg, #3182CE 0%, #63B3ED 100%)', courses: 10, duration: '约30天', tags: ['经营篇', '团队篇', '心态篇'] },
   { id: 'diamond', name: '中阶领导力学院', subtitle: '生活家园 · 团队建设', icon: '💎', color: '#805AD5', gradient: 'linear-gradient(135deg, #805AD5 0%, #B794F4 100%)', courses: 10, duration: '约60天', tags: ['团队篇', '产品篇', '心态篇'] },
   { id: 'black', name: '高阶领导力学院', subtitle: '生命家园 · 领袖传承', icon: '👑', color: '#D69E2E', gradient: 'linear-gradient(135deg, #D69E2E 0%, #F6E05E 100%)', courses: 10, duration: '约90天', tags: ['团队篇', '心态篇', '经营篇'] },
 ]
