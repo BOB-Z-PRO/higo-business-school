@@ -41,6 +41,7 @@ export default function HomePage() {
           <nav className="nav">
             <Link href="/#schools" className="nav-link active">四大学院</Link>
             <Link href="/#chapters" className="nav-link">六大篇章</Link>
+            <Link href="/course" className="nav-link">全部课程</Link>
             <Link href="/#about" className="nav-link">关于我们</Link>
           </nav>
         </div>
