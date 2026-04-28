@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import { useSession, signOut } from 'next-auth/react'
+import { useEffect } from 'react'
 
 const schools = [
   { id: 'new', name: '新人成长学院', subtitle: '新人入门，了解HIGO', icon: '🌱', color: '#38A169', gradient: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', courses: 10, duration: '约15天', tags: ['公司篇', '产品篇', '经营篇'] },
@@ -26,6 +28,8 @@ const learningSteps = [
 ]
 
 export default function HomePage() {
+  const { data: session } = useSession()
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -43,7 +47,19 @@ export default function HomePage() {
             <Link href="/#chapters" className="nav-link">六大篇章</Link>
             <Link href="/course" className="nav-link">全部课程</Link>
             <Link href="/#about" className="nav-link">关于我们</Link>
-            <Link href="/login" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>登录</Link>
+            {session ? (
+              <>
+                <Link href="/profile" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>
+                  <i className="fas fa-user" style={{ marginRight: 4 }}></i>
+                  {session.user?.name || '我的'}
+                </Link>
+                <button onClick={() => signOut({ callbackUrl: '/' })} className="nav-link" style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#E53E3E' }}>
+                  退出
+                </button>
+              </>
+            ) : (
+              <Link href="/login" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>登录</Link>
+            )}
           </nav>
         </div>
       </header>
