@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { LayerGroup, Plus, Edit, Trash2 } from 'lucide-react'
+import { Layers, Plus, Edit, Trash2 } from 'lucide-react'
 
 interface Chapter {
   id: string
@@ -141,7 +141,7 @@ export default function AdminChaptersPage() {
                   <td style={{ padding: '16px 20px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                       <div style={{ width: 40, height: 40, background: '#EDF2F7', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <LayerGroup size={20} style={{ color: '#4A5568' }} />
+                        <Layers size={20} style={{ color: '#4A5568' }} />
                       </div>
                       <div>
                         <div style={{ fontWeight: 500, color: '#1A202C' }}>{chapter.name}</div>
