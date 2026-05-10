@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { ArrowLeft, Target, Heart, Globe, Crown, Users, TrendingUp, DollarSign } from 'lucide-react'
 
 // 海购国际战略研讨会 - 官方数据
-const original = {
+const strategy = {
   vision: '用基因科技，创造生命奇迹',
   mission: '为会员构建一个没有试错成本的创业空间，实现从生存，生活到生命的阶层跨越',
   positioning: '大健康产业链，头部产业中的皇冠',
