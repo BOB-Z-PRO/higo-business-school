@@ -20,6 +20,22 @@ const fiveSentences = [
   { num: '五', title: '全球市场', desc: '业务覆盖全球6个国家' },
 ]
 
+const globalLayout = [
+  { country: '美国', icon: '🇺🇸', role: '全球总部', focus: '技术研发与战略规划', region: '北美洲' },
+  { country: '马来西亚', icon: '🇲🇾', role: '全球运营中心', focus: '东南亚市场运营', region: '东南亚' },
+  { country: '韩国', icon: '🇰🇷', role: '东亚市场', focus: '东亚市场拓展', region: '东亚' },
+  { country: '越南', icon: '🇻🇳', role: '东南亚市场', focus: '东南亚市场拓展', region: '东南亚' },
+  { country: '加拿大', icon: '🇨🇦', role: '北美市场', focus: '北美高端市场', region: '北美洲' },
+  { country: '日本', icon: '🇯🇵', role: '东亚市场', focus: '东亚高端市场', region: '东亚' },
+]
+
+const marketFeatures = [
+  { icon: '🌍', title: '全球化布局', desc: '6个国家，4大洲覆盖' },
+  { icon: '📱', title: '数字化运营', desc: '线上线下融合' },
+  { icon: '🎓', title: '系统化培训', desc: '完整的商学院体系' },
+  { icon: '💰', title: '多元化收益', desc: '多种收入来源' },
+]
+
 const twoSystems = {
   title: '两个体制',
   items: [
