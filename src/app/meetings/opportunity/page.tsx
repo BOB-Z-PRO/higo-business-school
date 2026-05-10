@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -44,7 +44,7 @@ const goldenSentences = [
 ]
 
 const complianceNotes = [
-  '禁止承诺任何收益，禁止暗示人人必赚',
+  '禁止承诺任何收益，禁止暗示收益确定',
   '禁止夸大产品效果，禁止说能治疗疾病',
   '案例必须真实，必须注明"因人而异"',
   '禁止用检测报告为产品效果做承诺',

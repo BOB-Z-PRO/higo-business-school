@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
@@ -113,9 +113,9 @@ const chaptersData: Record<string, {
         gradientClass: 'cell',
         features: [
           { icon: '📚', title: '科学原理', description: '靶向自噬技术、细胞清理机制' },
-          { icon: '🎯', title: '三大靶向', description: '饿死癌细胞/慢性炎症/免疫调节' },
+          { icon: '🎯', title: '三大靶向', description: '支持异常细胞管理/慢性炎症/免疫调节' },
           { icon: '✨', title: '核心功效', description: '细胞修复/炎症消除/免疫增强' },
-          { icon: '📊', title: '见证案例', description: '乙肝转阴/肿瘤缩小/关节改善' },
+          { icon: '📊', title: '见证案例', description: '乙肝转阴/身体状态改善/关节改善' },
         ],
         certifications: ['FDA认证', 'cGMP认证', 'HALAL认证', 'SGS检测']
       },

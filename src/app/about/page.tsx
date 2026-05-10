@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -234,7 +234,7 @@ export default function AboutPage() {
           <div className="section-header">
             <span className="section-badge">Certifications</span>
             <h2 className="section-title">国际认证</h2>
-            <p className="section-desc">7大国际认证，品质保证</p>
+            <p className="section-desc">7大国际认证，品质支持</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '16px', marginTop: '40px' }}>
             {certifications.map((cert) => (

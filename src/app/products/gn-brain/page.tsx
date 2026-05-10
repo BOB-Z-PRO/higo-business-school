@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -48,7 +48,7 @@ const allowedExpressions = [
 
 const forbiddenExpressions = [
   '治疗老年痴呆症',
-  '治愈阿尔茨海默病',
+  '宣称改善阿尔茨海默相关问题',
   '提升智商、变聪明',
   '几天就记忆力大增',
   '替代药物治疗脑部疾病',

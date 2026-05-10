@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -47,9 +47,9 @@ const allowedExpressions = [
 ]
 
 const forbiddenExpressions = [
-  '治愈癌症、治好肿瘤',
-  '让乙肝转阴、根治糖尿病',
-  '保证什么病都能治',
+  '宣称改善严重疾病、治好肿瘤',
+  '让乙肝转阴、替代糖代谢管理方案',
+  '承诺适用于所有健康问题',
   '修复后永不再损坏',
   '几天就治好慢性病',
   '替代药物和治疗',

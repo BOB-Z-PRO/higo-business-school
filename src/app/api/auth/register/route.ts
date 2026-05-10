@@ -1,8 +1,7 @@
-import { NextResponse } from 'next/server'
+﻿import { NextResponse } from 'next/server'
 import bcrypt from 'bcryptjs'
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '@/lib/prisma'
 
-const prisma = new PrismaClient()
 
 export async function POST(request: Request) {
   try {
@@ -54,3 +53,4 @@ export async function POST(request: Request) {
     )
   }
 }
+

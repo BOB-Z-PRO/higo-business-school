@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -55,8 +55,8 @@ const allowedExpressions = [
 ]
 
 const forbiddenExpressions = [
-  '治疗疾病、治愈癌症',
-  '保证白发转黑、血压正常',
+  '治疗疾病、宣称改善严重疾病',
+  '承诺发色状态与身体指标快速改变',
   '延长寿命、延长端粒',
   '吃几天就有明显效果',
   '所有人都能达到同样效果',

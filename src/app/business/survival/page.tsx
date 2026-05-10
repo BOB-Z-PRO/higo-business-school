@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -26,8 +26,8 @@ const mindset = [
 const courses = [
   { id: 'N-01', title: 'HIGO是什么 — 一页纸说清楚', duration: '15分钟', type: '视频+逐字稿', category: '公司篇', summary: '如何用一句话让陌生人记住HIGO？包含6年深耕、七大国际认证、权威专家团队。' },
   { id: 'N-02', title: '为什么要做HIGO — 趋势与机遇', duration: '20分钟', type: '视频+逐字稿', category: '公司篇', summary: '大健康30万亿市场、基因抗衰革命、为什么现在是最佳时机。' },
-  { id: 'N-03', title: 'GnAKG产品原理', duration: '30分钟', type: '视频+逐字稿', category: '产品篇', summary: 'AKG为什么能逆转生物年龄？NAD+/Sirtuins机制、180天人体试验数据、见证案例。' },
-  { id: 'N-04', title: 'GnCELL产品原理', duration: '25分钟', type: '视频+逐字稿', category: '产品篇', summary: 'Cell为什么能"饿死癌细胞"？靶向自噬技术、三大功效、见证案例。' },
+  { id: 'N-03', title: 'GnAKG产品原理', duration: '30分钟', type: '视频+逐字稿', category: '产品篇', summary: 'AKG为什么能优化生物年龄表现？NAD+/Sirtuins机制、180天人体试验数据、见证案例。' },
+  { id: 'N-04', title: 'GnCELL产品原理', duration: '25分钟', type: '视频+逐字稿', category: '产品篇', summary: 'Cell为什么能"支持异常细胞管理"？靶向自噬技术、三大功效、见证案例。' },
   { id: 'N-05', title: 'GnHORMONE产品原理', duration: '25分钟', type: '视频+逐字稿', category: '产品篇', summary: '荷尔蒙平衡为什么能解决更年期/亚健康？8大腺体、男女配方区别。' },
   { id: 'N-06', title: 'HIGO商业模式', duration: '20分钟', type: '视频+逐字稿', category: '经营篇', summary: '四句话讲明白：四大红利、奖金制度、晋升路线。' },
   { id: 'N-07', title: '如何启动市场 — 新人起步六步曲', duration: '30分钟', type: '视频+逐字稿', category: '经营篇', summary: '简单听话照做、筛人思维、150讲定律、7天起步任务。' },

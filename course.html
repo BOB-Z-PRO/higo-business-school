@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全部课程 - HIGO商学院</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .course-list-header {
+      background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .course-filter {
+      background: white;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      margin: -40px auto 40px;
+      max-width: 1000px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-label {
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+    .filter-select {
+      padding: 8px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      background: white;
+      cursor: pointer;
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1024px) {
+      .course-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .course-grid { grid-template-columns: 1fr; }
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: white;
+      border-radius: var(--radius-md);
+      color: var(--text-dark);
+      font-weight: 500;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index_new.html" class="logo">
+        <div class="logo-icon">H</div>
+        <div>
+          <div class="logo-text">HIGO商学院</div>
+          <div class="logo-sub">HIGO Business School</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index_new.html" class="nav-link">首页</a>
+        <a href="course.html" class="nav-link active">全部课程</a>
+        <a href="company/index.html" class="nav-link">公司篇</a>
+        <a href="product/index.html" class="nav-link">产品篇</a>
+        <a href="business/index.html" class="nav-link">经营篇</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Course List Header -->
+  <section class="course-list-header">
+    <div class="container">
+      <a href="index_new.html" class="back-btn" style="margin-bottom: 24px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3);">
+        <i class="fas fa-arrow-left"></i> 返回首页
+      </a>
+      <h1 style="margin-bottom: 12px;">全部课程</h1>
+      <p style="opacity: 0.9;">HIGO商学院 · 47门精品课程 · 四大篇章体系</p>
+      <div style="display: flex; justify-content: center; gap: 32px; margin-top: 32px;">
+        <div>
+          <div style="font-size: 2rem; font-weight: 700;">47</div>
+          <div style="font-size: 0.875rem; opacity: 0.8;">课程总数</div>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700;">4</div>
+          <div style="font-size: 0.875rem; opacity: 0.8;">学院数量</div>
+        </div>
+        <div>
+          <div style="font-size: 2rem; font-weight: 700;">5</div>
+          <div style="font-size: 0.875rem; opacity: 0.8;">篇章分类</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Filter -->
+  <div class="container">
+    <div class="course-filter">
+      <div class="filter-group">
+        <span class="filter-label">筛选：</span>
+      </div>
+      <div class="filter-group">
+        <select class="filter-select" id="schoolFilter">
+          <option value="">全部学院</option>
+          <option value="new">新人成长学院</option>
+          <option value="svip">初阶领导力学院</option>
+          <option value="diamond">中阶领导力学院</option>
+          <option value="black">高阶领导力学院</option>
+          <option value="mindset">心态学院</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select class="filter-select" id="chapterFilter">
+          <option value="">全部篇章</option>
+          <option value="company">公司篇</option>
+          <option value="product">产品篇</option>
+          <option value="business">经营篇</option>
+          <option value="team">团队篇</option>
+          <option value="mindset">心态篇</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <select class="filter-select" id="statusFilter">
+          <option value="">全部状态</option>
+          <option value="pending">待学习</option>
+          <option value="in-progress">进行中</option>
+          <option value="completed">已完成</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="filterCourses()">
+        <i class="fas fa-search"></i> 搜索
+      </button>
+    </div>
+  </div>
+
+  <!-- Course Grid -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="course-grid" id="courseGrid">
+        <!-- Course cards will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 HIGO商学院. All rights reserved.</div>
+        <div>HIGO全球生物科技集团 · 培训中心</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Course Data - All 47 Courses
+    const COURSES = [
+      // ========== 新人成长学院 N-01 ~ N-10 ==========
+      {
+        id: 'N-01',
+        title: 'HIGO是什么',
+        subtitle: '一页纸说清楚',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'company',
+        chapterName: '公司篇',
+        duration: '15分钟',
+        status: 'pending',
+        icon: '🏢',
+        description: '用最简洁的语言介绍HIGO公司定位、47年历史和核心价值主张。',
+        objectives: [
+          '能用一句话介绍HIGO',
+          '了解47年历史沉淀的意义',
+          '理解HIGO的使命和愿景'
+        ]
+      },
+      {
+        id: 'N-02',
+        title: '为什么要做HIGO',
+        subtitle: '趋势与机遇',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'company',
+        chapterName: '公司篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '📈',
+        description: '分析大健康赛道、跨境电商机遇和基因抗衰革命，说明为什么现在是入局HIGO的最佳时机。',
+        objectives: [
+          '理解大健康是未来20年最大的趋势',
+          '了解跨境电商元年的机遇',
+          '认识到基因抗衰是革命性的产品'
+        ]
+      },
+      {
+        id: 'N-03',
+        title: 'GnAKG产品原理',
+        subtitle: '普通人能听懂的讲解',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'product',
+        chapterName: '产品篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🧬',
+        description: '深入浅出地讲解AKG（α-酮戊二酸）的科学原理，包括NAD+、Sirtuins长寿蛋白、抗衰五大机制。',
+        objectives: [
+          '理解NAD+与衰老的关系',
+          '了解Sirtuins长寿蛋白的作用',
+          '掌握AKG抗衰的五大机制'
+        ]
+      },
+      {
+        id: 'N-04',
+        title: 'GnCELL产品原理',
+        subtitle: '细胞修复系统',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'product',
+        chapterName: '产品篇',
+        duration: '25分钟',
+        status: 'pending',
+        icon: '🔬',
+        description: '讲解GnCELL的靶向自噬技术原理，细胞清理机制，以及对慢性炎症、免疫力等的调节作用。',
+        objectives: [
+          '理解细胞自噬原理',
+          '了解靶向清理的概念',
+          '掌握CELL对身体的修复作用'
+        ]
+      },
+      {
+        id: 'N-05',
+        title: 'GnHORMONE产品原理',
+        subtitle: '荷尔蒙平衡',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'product',
+        chapterName: '产品篇',
+        duration: '25分钟',
+        status: 'pending',
+        icon: '⚖️',
+        description: '讲解人体八大腺体系统，荷尔蒙对健康的影响，以及如何通过GnHORMONE实现平衡调节。',
+        objectives: [
+          '了解八大腺体的功能',
+          '理解荷尔蒙平衡的重要性',
+          '区分男女配方的不同功效'
+        ]
+      },
+      {
+        id: 'N-06',
+        title: 'HIGO商业模式',
+        subtitle: '四句话讲明白',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '💼',
+        description: '用最简洁的方式讲解HIGO的商业模式：生态系统、双体制、三大家园、四大红利。',
+        objectives: [
+          '理解一个生态系统的含义',
+          '了解创业体制和消费体制',
+          '掌握四大红利的核心价值'
+        ]
+      },
+      {
+        id: 'N-07',
+        title: '如何启动市场',
+        subtitle: '新人起步六步曲',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🚀',
+        description: '新人启动市场的六个关键步骤：列名单、邀约、沟通、跟进、成交、复制。',
+        objectives: [
+          '掌握新人起步的基本流程',
+          '学会列名单的方法',
+          '理解跟进的重要性'
+        ]
+      },
+      {
+        id: 'N-08',
+        title: '邀约话术',
+        subtitle: 'ABC法则三种场景',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '📞',
+        description: 'ABC法则的核心逻辑，三种典型邀约场景（熟人、意向、线上）的具体话术和技巧。',
+        objectives: [
+          '理解ABC法则的原理',
+          '掌握三种场景的邀约话术',
+          '学会处理常见的拒绝'
+        ]
+      },
+      {
+        id: 'N-09',
+        title: '如何讲产品',
+        subtitle: '产品讲解三板斧',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🎯',
+        description: '产品讲解的三大核心：讲原理（让人信服）、讲见证（让人期待）、讲感受（让人共鸣）。',
+        objectives: [
+          '掌握讲原理的方法',
+          '学会用见证增强说服力',
+          '能够分享个人真实感受'
+        ]
+      },
+      {
+        id: 'N-10',
+        title: '如何讲机会',
+        subtitle: '30分钟事业说明会',
+        school: 'new',
+        schoolName: '新人成长学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🎤',
+        description: '完整的事业说明会讲解框架：趋势→公司→产品→机会→结尾促成。',
+        objectives: [
+          '掌握30分钟说明会的结构',
+          '学会每个环节的要点',
+          '能够独立完成事业说明'
+        ]
+      },
+
+      // ========== 初阶领导力学院 L1-01 ~ L1-10 ==========
+      {
+        id: 'L1-01',
+        title: 'SVIP入门全解',
+        subtitle: '权益与目标',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '💎',
+        description: '详细介绍SVIP的身份权益、晋升条件和发展目标，帮助你明确前进方向。',
+        objectives: [
+          '清楚SVIP的权益体系',
+          '了解晋升的具体条件',
+          '设定自己的发展目标'
+        ]
+      },
+      {
+        id: 'L1-02',
+        title: '活跃度是什么',
+        subtitle: '经营者的底线',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '15分钟',
+        status: 'pending',
+        icon: '📊',
+        description: '讲解活跃度的计算方式、保持活跃的重要性，以及避免降级的核心方法。',
+        objectives: [
+          '理解活跃度的计算规则',
+          '掌握保持活跃的方法',
+          '避免常见的降级错误'
+        ]
+      },
+      {
+        id: 'L1-03',
+        title: '如何达成三星SVIP',
+        subtitle: '晋升路线图',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🏆',
+        description: '从一星到三星SVIP的完整晋升路线图，包括每阶段的核心任务和达成策略。',
+        objectives: [
+          '了解三星SVIP的具体标准',
+          '掌握快速晋升的策略',
+          '制定自己的达成计划'
+        ]
+      },
+      {
+        id: 'L1-04',
+        title: '讲计划的艺术',
+        subtitle: 'ABC法则深度应用',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🎯',
+        description: '深入讲解ABC法则在不同场景的应用，如何推到位、如何跟进、如何促成。',
+        objectives: [
+          '深化ABC法则的理解',
+          '掌握推到位的技巧',
+          '学会高效的跟进方法'
+        ]
+      },
+      {
+        id: 'L1-05',
+        title: '有效沟通',
+        subtitle: '挖掘需求四步法',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '💬',
+        description: '挖掘客户真实需求的四个步骤：倾听、共情、提问、确认，建立深度信任。',
+        objectives: [
+          '学会倾听而非说教',
+          '掌握共情的方法',
+          '运用提问挖掘需求'
+        ]
+      },
+      {
+        id: 'L1-06',
+        title: '解答异议',
+        subtitle: '十大常见问题',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '❓',
+        description: '面对客户最常见的十大拒绝问题，提供标准应答话术和化解技巧。',
+        objectives: [
+          '预判客户的常见异议',
+          '掌握标准应答话术',
+          '学会转化拒绝为机会'
+        ]
+      },
+      {
+        id: 'L1-07',
+        title: '如何主持小型招商会',
+        subtitle: '5-20人招商会',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🎪',
+        description: '5-20人小型招商会的策划、准备、执行和收单全流程详解。',
+        objectives: [
+          '掌握小型招商会的策划',
+          '学会招商会的标准流程',
+          '能够独立主持招商会'
+        ]
+      },
+      {
+        id: 'L1-08',
+        title: '如何做好跟进',
+        subtitle: '新人跟进七步曲',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '25分钟',
+        status: 'pending',
+        icon: '🤝',
+        description: '新人跟进的标准七步流程，确保每个新伙伴都能顺利起步并快速成长。',
+        objectives: [
+          '掌握新人跟进七步法',
+          '建立标准跟进流程',
+          '提高新人的存活率'
+        ]
+      },
+      {
+        id: 'L1-09',
+        title: '心态建设',
+        subtitle: '五大心态与五大原则',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🧠',
+        description: '经营者必须具备的五大心态（真诚、责任、感恩、付出、长期主义）和五大原则。',
+        objectives: [
+          '理解五大心态的内涵',
+          '掌握五大原则的运用',
+          '建立正确的经营心态'
+        ]
+      },
+      {
+        id: 'L1-10',
+        title: '为什么要每天3讲',
+        subtitle: '行动力养成',
+        school: 'svip',
+        schoolName: '初阶领导力学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '⚡',
+        description: '每天3讲的重要性，行动力养成的科学方法，以及坚持的力量。',
+        objectives: [
+          '理解每天3讲的意义',
+          '掌握行动力养成方法',
+          '建立持续行动的习惯'
+        ]
+      },
+
+      // ========== 中阶领导力学院 L2-01 ~ L2-10 ==========
+      {
+        id: 'L2-01',
+        title: '钻石级别全解',
+        subtitle: '权益与责任',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '💠',
+        description: '钻石领导人的定位、权益、责任和使命，帮助你完成从经营者到领导者的转变。',
+        objectives: [
+          '理解钻石的身份定位',
+          '清楚钻石的权益责任',
+          '承担领导者的使命'
+        ]
+      },
+      {
+        id: 'L2-02',
+        title: '如何培养一星SVIP',
+        subtitle: '人才复制流水线',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🏭',
+        description: '建立人才复制流水线的四大步骤：选人、育人、带人、留人，实现团队的自动复制。',
+        objectives: [
+          '掌握人才复制四大步骤',
+          '学会筛选对的人',
+          '建立可复制的培训体系'
+        ]
+      },
+      {
+        id: 'L2-03',
+        title: '如何做团队启动',
+        subtitle: '成功九步法',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🚀',
+        description: '成功九步法的完整解读：梦想→目标→学习→行动→邀约→跟进→成交→复制→传承。',
+        objectives: [
+          '完整理解成功九步',
+          '能够运用九步启动团队',
+          '帮助伙伴走完九步'
+        ]
+      },
+      {
+        id: 'L2-04',
+        title: '团队会议体系',
+        subtitle: '早会/晚会/周会',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '📅',
+        description: '团队会议体系的建立：早会打气、晚会复盘、周会培训，让团队保持高昂状态。',
+        objectives: [
+          '掌握早会的核心要点',
+          '学会晚会复盘方法',
+          '能够组织周会培训'
+        ]
+      },
+      {
+        id: 'L2-05',
+        title: '如何做团队激励',
+        subtitle: '动势建设',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🔥',
+        description: '团队动势建设的核心方法：庆祝小胜利、树立榜样、目标激励，让团队持续向前。',
+        objectives: [
+          '理解动势的重要性',
+          '掌握动势建设方法',
+          '能够激励团队成员'
+        ]
+      },
+      {
+        id: 'L2-06',
+        title: '如何做案例分享',
+        subtitle: '见证的力量',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'product',
+        chapterName: '产品篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '📢',
+        description: '见证收集的方法、分类整理的技巧、不同场景的使用方式，让见证成为销售利器。',
+        objectives: [
+          '学会收集和整理见证',
+          '掌握见证的分类方法',
+          '能够灵活运用见证'
+        ]
+      },
+      {
+        id: 'L2-07',
+        title: '时间管理与效率',
+        subtitle: '领导人时间表',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '⏰',
+        description: '领导人高效时间管理的核心原则，时间表模板，以及批量处理和优先级排序的技巧。',
+        objectives: [
+          '掌握时间管理的原则',
+          '学会设定时间表',
+          '提高工作和带团队效率'
+        ]
+      },
+      {
+        id: 'L2-08',
+        title: '目标设定与达成',
+        subtitle: '月计划与周计划',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🎯',
+        description: 'SMART目标设定法，月计划周计划的制定与执行，目标检视和调整的方法。',
+        objectives: [
+          '运用SMART原则设定目标',
+          '掌握月计划周计划方法',
+          '学会检视和调整计划'
+        ]
+      },
+      {
+        id: 'L2-09',
+        title: '深度沟通',
+        subtitle: '团队凝聚力打造',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '💪',
+        description: '深度沟通的技巧，团队凝聚力打造的四大来源，共情共鸣共识共事共共赢。',
+        objectives: [
+          '学会深度沟通技巧',
+          '理解凝聚力来源',
+          '打造铁军团队'
+        ]
+      },
+      {
+        id: 'L2-10',
+        title: '情绪管理与压力处理',
+        subtitle: '稳定压倒一切',
+        school: 'diamond',
+        schoolName: '中阶领导力学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '🌊',
+        description: '领导者必须具备的情绪管理能力，三大稳定（价值观、目标、情绪）的重要性。',
+        objectives: [
+          '理解稳定的重要性',
+          '掌握情绪调节方法',
+          '保持领导者的稳定性'
+        ]
+      },
+
+      // ========== 高阶领导力学院 L3-01 ~ L3-10 ==========
+      {
+        id: 'L3-01',
+        title: '黑钻级别全解',
+        subtitle: '使命与格局',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '30分钟',
+        status: 'pending',
+        icon: '👑',
+        description: '黑钻领导人的使命与格局，运动员→教练→领袖的成长路径，使命驱动的人生。',
+        objectives: [
+          '理解黑钻的使命',
+          '提升自己的格局',
+          '找到自己的使命定位'
+        ]
+      },
+      {
+        id: 'L3-02',
+        title: '如何培养钻石领导人',
+        subtitle: '培养更多钻石',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🌟',
+        description: '培养钻石级领导人的方法论：识别钻石特质、提供成长机会、一对一辅导、资源倾斜。',
+        objectives: [
+          '识别钻石特质的人才',
+          '掌握培养钻石的方法',
+          '制定培养计划'
+        ]
+      },
+      {
+        id: 'L3-03',
+        title: '领袖复制系统',
+        subtitle: '领导人养成流水线',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '50分钟',
+        status: 'pending',
+        icon: '⚙️',
+        description: '建立领袖复制流水线：标准化流程、培训体系、会议体系、激励体系、传承机制。',
+        objectives: [
+          '理解系统建设的重要性',
+          '掌握复制系统的要素',
+          '建立自己的传承体系'
+        ]
+      },
+      {
+        id: 'L3-04',
+        title: '如何做大招商会',
+        subtitle: '100人以上会议',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'business',
+        chapterName: '经营篇',
+        duration: '60分钟',
+        status: 'pending',
+        icon: '🎉',
+        description: '100人以上大型招商会的策划与执行：策划准备、邀约转化、现场执行、会后跟进。',
+        objectives: [
+          '掌握大型招商会策划',
+          '学会100人+会议执行',
+          '建立会后跟进系统'
+        ]
+      },
+      {
+        id: 'L3-05',
+        title: '团队文化与价值观建设',
+        subtitle: '文化的力量',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🏛️',
+        description: '团队文化的塑造：核心价值观、行为准则、文化落地、文化传承。',
+        objectives: [
+          '理解文化的重要性',
+          '掌握文化塑造方法',
+          '建立团队文化'
+        ]
+      },
+      {
+        id: 'L3-06',
+        title: '战略布局',
+        subtitle: '市场拓展思维',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🗺️',
+        description: '市场战略规划：全局思维、长期思维、资源配置、市场拓展策略。',
+        objectives: [
+          '具备战略思维',
+          '掌握市场拓展策略',
+          '学会资源配置'
+        ]
+      },
+      {
+        id: 'L3-07',
+        title: '资源整合与借力',
+        subtitle: '整合做大市场',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🤝',
+        description: '资源整合的思维：借力专家、借力平台、借力工具、借力团队、跨界合作。',
+        objectives: [
+          '理解资源整合的重要性',
+          '掌握借力发展的方法',
+          '建立合作关系'
+        ]
+      },
+      {
+        id: 'L3-08',
+        title: '领袖影响力',
+        subtitle: '如何影响核心圈',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '⚡',
+        description: '影响力的本质、核心圈打造五步法、持续输出价值、建立个人品牌。',
+        objectives: [
+          '理解影响力的本质',
+          '掌握核心圈打造方法',
+          '扩大自己的影响力'
+        ]
+      },
+      {
+        id: 'L3-09',
+        title: '百年基业',
+        subtitle: '系统化运营思维',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'team',
+        chapterName: '团队篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🏗️',
+        description: '长期思维、系统化运营、流程标准化、传承计划，建立可传承的事业。',
+        objectives: [
+          '具备长期思维',
+          '掌握系统化运营',
+          '建立传承计划'
+        ]
+      },
+      {
+        id: 'L3-10',
+        title: '传承与使命',
+        subtitle: '带领更多人成功',
+        school: 'black',
+        schoolName: '高阶领导力学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '40分钟',
+        status: 'pending',
+        icon: '🌏',
+        description: '使命的意义、帮助更多人成功、传承计划、带领团队走向更大舞台。',
+        objectives: [
+          '找到自己的使命',
+          '帮助他人成功',
+          '传承使命'
+        ]
+      },
+
+      // ========== 心态学院 M-01 ~ M-07 ==========
+      {
+        id: 'M-01',
+        title: '五大心态',
+        subtitle: '真诚/责任/感恩/付出/长期主义',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '25分钟',
+        status: 'pending',
+        icon: '💎',
+        description: '经营者必须具备的五大核心心态：真诚、责任、感恩、付出、长期主义。',
+        objectives: [
+          '理解五大心态的内涵',
+          '在生活中践行五大心态',
+          '成为他人的榜样'
+        ]
+      },
+      {
+        id: 'M-02',
+        title: '五大原则',
+        subtitle: '钱财分明/感情清晰/禁止消极',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '📏',
+        description: '经营者的五大行为准则：钱财分明、感情清晰、禁止消极、言行一致、信守承诺。',
+        objectives: [
+          '掌握五大原则的要求',
+          '在经营中践行原则',
+          '建立良好的人际关系'
+        ]
+      },
+      {
+        id: 'M-03',
+        title: '目标设定',
+        subtitle: '梦想→目标→行动',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '🎯',
+        description: '从梦想出发，将梦想转化为具体目标，通过行动达成目标的方法论。',
+        objectives: [
+          '清晰自己的梦想',
+          '将梦想转化为目标',
+          '制定行动计划'
+        ]
+      },
+      {
+        id: 'M-04',
+        title: '坚持的力量',
+        subtitle: '每天23公里精神',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '15分钟',
+        status: 'pending',
+        icon: '🏃',
+        description: '坚持的力量：穿越戈壁的故事，每天进步一点点，复利的力量。',
+        objectives: [
+          '理解坚持的意义',
+          '培养不放弃的精神',
+          '每天坚持行动'
+        ]
+      },
+      {
+        id: 'M-05',
+        title: '稳定压倒一切',
+        subtitle: '价值观/目标/情绪三稳定',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '⚓',
+        description: '稳定压倒一切：价值观稳定、目标稳定、情绪稳定，在波动中保持定力。',
+        objectives: [
+          '理解稳定的重要性',
+          '保持三方面的稳定',
+          '成为团队的定海神针'
+        ]
+      },
+      {
+        id: 'M-06',
+        title: '情绪管理',
+        subtitle: '不被外界干扰',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '20分钟',
+        status: 'pending',
+        icon: '🌊',
+        description: '情绪管理的方法：认识情绪、接受情绪、转化情绪，不被外界干扰。',
+        objectives: [
+          '认识自己的情绪',
+          '学会转化负面情绪',
+          '保持情绪稳定'
+        ]
+      },
+      {
+        id: 'M-07',
+        title: '领导者的心态',
+        subtitle: '担当/格局/使命',
+        school: 'mindset',
+        schoolName: '心态学院',
+        chapter: 'mindset',
+        chapterName: '心态篇',
+        duration: '25分钟',
+        status: 'pending',
+        icon: '🦸',
+        description: '领导者必须具备的心态：担当精神、宏观格局、使命驱动。',
+        objectives: [
+          '培养担当精神',
+          '提升自己的格局',
+          '找到使命驱动'
+        ]
+      }
+    ];
+
+    // Chapter colors mapping
+    const chapterColors = {
+      company: 'company',
+      product: 'product',
+      business: 'business',
+      team: 'team',
+      mindset: 'mindset'
+    };
+
+    // Render course cards
+    function renderCourses(courses) {
+      const grid = document.getElementById('courseGrid');
+      grid.innerHTML = courses.map(course => `
+        <a href="course-detail.html?id=${course.id}" class="course-card">
+          <div class="course-card-header ${chapterColors[course.chapter]}"></div>
+          <div class="course-card-body">
+            <div class="course-card-meta">
+              <span class="course-num">${course.id}</span>
+              <span class="course-duration"><i class="far fa-clock"></i> ${course.duration}</span>
+            </div>
+            <h4 class="course-title">${course.icon} ${course.title}</h4>
+            <p class="course-subtitle">${course.subtitle}</p>
+            <div class="course-card-footer">
+              <span class="course-category ${chapterColors[course.chapter]}">${course.chapterName}</span>
+              <span class="course-status ${course.status}">${course.status === 'pending' ? '待学习' : course.status === 'in-progress' ? '进行中' : '已完成'}</span>
+            </div>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // Filter courses
+    function filterCourses() {
+      const school = document.getElementById('schoolFilter').value;
+      const chapter = document.getElementById('chapterFilter').value;
+      const status = document.getElementById('statusFilter').value;
+
+      let filtered = COURSES;
+
+      if (school) {
+        filtered = filtered.filter(c => c.school === school);
+      }
+      if (chapter) {
+        filtered = filtered.filter(c => c.chapter === chapter);
+      }
+      if (status) {
+        filtered = filtered.filter(c => c.status === status);
+      }
+
+      renderCourses(filtered);
+    }
+
+    // Initial render
+    renderCourses(COURSES);
+
+    // Listen for filter changes
+    document.getElementById('schoolFilter').addEventListener('change', filterCourses);
+    document.getElementById('chapterFilter').addEventListener('change', filterCourses);
+    document.getElementById('statusFilter').addEventListener('change', filterCourses);
+  </script>
+</body>
+</html>

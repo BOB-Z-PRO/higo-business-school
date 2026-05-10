@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -48,8 +48,8 @@ const allowedExpressions = [
 
 const forbiddenExpressions = [
   '治疗更年期综合症',
-  '治愈内分泌失调',
-  '保证激素正常',
+  '宣称改善内分泌失衡',
+  '承诺激素快速恢复',
   '几天就见效',
   '替代激素药物治疗',
   '解决所有健康问题',

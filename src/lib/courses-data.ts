@@ -1,4 +1,4 @@
-export interface CourseData {
+﻿export interface CourseData {
   id: string
   title: string
   duration: string
@@ -75,7 +75,7 @@ FDA、cGMP、ISO9001、ISO22000、HACCP、KDA、NSF。
     complianceNotes: [
       '不能说HIGO能治病，只能说基因抗衰',
       '不能说47年历史（这是错误的），HIGO成立于2020年',
-      '不能说，保证治好、保证效果',
+      '不能说，承诺明确疗效',
     ],
     relatedCourses: ['N-02', 'N-03', 'N-06'],
   },
@@ -187,7 +187,7 @@ AKG修复DNA损伤 → 延缓衰老
     ],
     complianceNotes: [
       '不能说治疗疾病',
-      '不能说保证白发转黑、血压正常',
+      '不能承诺发色状态与身体指标快速改变',
       '所有案例必须注明"因人而异"',
       '不能替代药物治疗',
     ],
@@ -244,8 +244,8 @@ GnCELL = 细胞修复胶囊
       '慢性炎症就像身体的"闷烧"，GnCELL是灭火器',
     ],
     complianceNotes: [
-      '不能说治愈癌症',
-      '不能说根治糖尿病',
+      '不能说宣称改善严重疾病',
+      '不能说替代糖代谢管理方案',
       '不能说几天就治好慢性病',
       '产品不替代药物治疗',
     ],
@@ -478,7 +478,7 @@ A先建立信任，B跟进，C自然成交
       '邀约不是求人，是给别人一个机会',
     ],
     complianceNotes: [
-      '不能说保证赚钱',
+      '不能说承诺明确收益',
       '不能夸大项目好处',
     ],
     relatedCourses: ['N-07', 'N-09', 'N-10'],
@@ -539,7 +539,7 @@ GN大脑：
       '我分享的是自己的真实体验',
     ],
     complianceNotes: [
-      '不能说保证效果',
+      '不能承诺明确效果',
       '案例必须注明"因人而异"',
       '不能夸大产品功效',
     ],
@@ -596,7 +596,7 @@ GN大脑：
     ],
     complianceNotes: [
       '禁止承诺收益',
-      '禁止暗示人人必赚',
+      '禁止暗示收益确定',
       '案例必须真实，必须注明"因人而异"',
     ],
     relatedCourses: ['N-06', 'N-08', 'N-09'],
@@ -658,7 +658,7 @@ GN大脑：
     ],
     complianceNotes: [
       '不能把权益当承诺',
-      '晋升条件是目标，不是保证',
+      '晋升条件是目标，不是确定性承诺',
     ],
     relatedCourses: ['L2-02', 'L2-03'],
   },
@@ -708,7 +708,7 @@ GN大脑：
       '培养人而不是控制人',
     ],
     complianceNotes: [
-      '不能说保证培养成功',
+      '不能承诺培养结果',
     ],
     relatedCourses: ['L2-01', 'L2-03', 'L2-04'],
   },
@@ -880,7 +880,7 @@ GN大脑：
     ],
     complianceNotes: [
       '奖励不能暗示收益承诺',
-      '奖励应该是庆祝，不是保证',
+      '奖励应该是庆祝，不是收益承诺',
     ],
     relatedCourses: ['L2-04', 'L2-06'],
   },
@@ -1208,7 +1208,7 @@ T - Time-bound：有时间限制
       '帮助更多人成功，才是真正的成功',
     ],
     complianceNotes: [
-      '不能把使命当成功保证',
+      '不能把使命当成成功承诺',
     ],
     relatedCourses: ['L3-02', 'L3-03'],
   },
@@ -1269,7 +1269,7 @@ T - Time-bound：有时间限制
       '领导者最重要的能力是培养更多领导者',
     ],
     complianceNotes: [
-      '不能说保证培养成功',
+      '不能承诺培养结果',
     ],
     relatedCourses: ['L3-01', 'L3-03'],
   },
@@ -1780,3 +1780,4 @@ export function getRelatedCourses(ids: string[]): CourseData[] {
 export function getCoursesByCategory(category: string): CourseData[] {
   return Object.values(coursesData).filter(c => c.category === category)
 }
+

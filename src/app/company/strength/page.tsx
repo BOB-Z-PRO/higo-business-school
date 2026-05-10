@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -21,7 +21,7 @@ const strengthAreas = [
     icon: '🏭',
     title: '生产供应',
     color: '#38A169',
-    desc: '美国原装制造，品质保证',
+    desc: '美国原装制造，品质支持',
     details: [
       '美国FDA认证工厂生产',
       'cGMP动态药品生产管理规范',

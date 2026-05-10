@@ -134,7 +134,7 @@ export default function ProductMeetingPage() {
               <span style={{ fontWeight: 600, color: 'var(--text-dark)' }}>合规提醒</span>
             </div>
             <p style={{ color: 'var(--text-gray)', marginTop: '12px', lineHeight: 1.7, marginBottom: 0 }}>
-              产品分享会禁止说治疗疾病、保证效果。案例必须真实并注明"因人而异"。使用公司统一话术，不自由发挥。
+              产品分享会禁止说治疗疾病、承诺明确效果。案例必须真实并注明"因人而异"。使用公司统一话术，不自由发挥。
             </p>
           </div>
         </div>

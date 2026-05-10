@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -11,7 +11,7 @@ const certifications = [
     shortName: 'Food and Drug Administration',
     icon: '🇺🇸',
     color: '#1A365D',
-    desc: '美国市场的最高标准认证，代表产品品质和安全性的最高保证',
+    desc: '美国市场的最高标准认证，代表产品品质和安全性的重要背书',
     details: [
       '美国市场的准入门槛',
       '严格的生产质量标准',
@@ -85,7 +85,7 @@ const certifications = [
     details: [
       '韩国市场准入',
       '符合韩国法规',
-      '本地化品质保证',
+      '本地化品质支持',
       '东亚市场认可',
     ],
   },
@@ -208,7 +208,7 @@ export default function CompanyCertificationsPage() {
               {[
                 { icon: '🏭', title: '美国制造', desc: '所有产品均在美国FDA认证工厂生产' },
                 { icon: '🔍', title: '严格检测', desc: '每一批次产品都经过严格质量检测' },
-                { icon: '📦', title: '正品保证', desc: '全程可追溯，拒绝假冒伪劣' },
+                { icon: '📦', title: '正品支持', desc: '全程可追溯，拒绝假冒伪劣' },
                 { icon: '🌿', title: '天然成分', desc: '采用天然原料，对人体无害' },
               ].map((item) => (
                 <div key={item.title} style={{ textAlign: 'center' }}>
