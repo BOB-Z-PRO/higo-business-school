@@ -134,6 +134,16 @@ export default function MeetingsPage() {
 
       <section className="section">
         <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
+            <div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 700, marginBottom: '6px' }}>新增复制模块</div>
+              <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-dark)' }}>会议 SOP 库</h2>
+            </div>
+            <Link href="/meetings/playbooks" className="btn btn-primary">
+              进入会议 SOP 库
+            </Link>
+          </div>
+
           <div className="section-header">
             <span className="section-badge">Meeting Center</span>
             <h2 className="section-title">六大会议类型</h2>
@@ -205,6 +215,11 @@ export default function MeetingsPage() {
                   <p style={{ color: 'var(--text-gray)', fontSize: '0.6875rem' }}>{item.desc}</p>
                 </div>
               ))}
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '24px' }}>
+              <Link href="/meetings/playbooks" className="btn btn-secondary" style={{ background: 'var(--primary-dark)', color: 'white', border: 'none' }}>
+                查看标准化会议流程 →
+              </Link>
             </div>
           </div>
         </div>

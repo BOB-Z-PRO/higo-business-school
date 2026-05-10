@@ -37,10 +37,13 @@
 
 - `/business`
 - `/business/survival`
+- `/business/survival/7-day`
 - `/business/survival/objections`
 - `/business/living`
 - `/business/life`
 - `/business/course/[id]`
+- `/scripts`
+- `/scripts/[category]`
 
 ## Learning
 
@@ -54,6 +57,8 @@
 ## Meetings
 
 - `/meetings`
+- `/meetings/playbooks`
+- `/meetings/playbooks/[type]`
 - `/meetings/leader`
 - `/meetings/morning`
 - `/meetings/newcomer`
@@ -66,6 +71,7 @@
 - `/resources`
 - `/resources/ppt`
 - `/compliance`
+- `/compliance/phrasebook`
 - `/about`
 
 ## Admin

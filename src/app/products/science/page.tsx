@@ -126,11 +126,11 @@ export default function ProductSciencePage() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px', marginBottom: '20px' }}>
                 <div style={{ textAlign: 'center', padding: '20px', background: 'linear-gradient(135deg, #805AD5 0%, #B794F4 100%)', borderRadius: '12px', color: 'white' }}>
                   <div style={{ fontSize: '2rem', fontWeight: 700 }}>8.5岁</div>
-                  <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>平均逆龄效果</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>平均年轻态研究表现</div>
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px', background: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', borderRadius: '12px', color: 'white' }}>
                   <div style={{ fontSize: '2rem', fontWeight: 700 }}>34岁</div>
-                  <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>最大逆龄效果</div>
+                  <div style={{ fontSize: '0.75rem', opacity: 0.9 }}>最大年轻态研究表现</div>
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px', background: 'linear-gradient(135deg, #3182CE 0%, #63B3ED 100%)', borderRadius: '12px', color: 'white' }}>
                   <div style={{ fontSize: '2rem', fontWeight: 700 }}>180天</div>

@@ -118,6 +118,38 @@ export default function BusinessPage() {
 
       <section className="section" style={{ background: 'var(--bg-gray)' }}>
         <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+            {[
+              {
+                href: '/business/survival/7-day',
+                title: '新人 7 天启动营',
+                description: '先让新人知道今天学什么、做什么、哪些话不能说。',
+                color: '#38A169',
+              },
+              {
+                href: '/scripts',
+                title: '话术训练库',
+                description: '按邀约、产品、跟进、异议等场景统一表达。',
+                color: '#805AD5',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                style={{
+                  background: 'white',
+                  borderRadius: '16px',
+                  padding: '20px',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
+                  borderTop: `4px solid ${item.color}`,
+                }}
+              >
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '8px' }}>{item.title}</h3>
+                <p style={{ color: 'var(--text-gray)', lineHeight: 1.7, fontSize: '0.88rem' }}>{item.description}</p>
+              </Link>
+            ))}
+          </div>
+
           <div className="section-header">
             <span className="section-badge">Q&amp;A</span>
             <h2 className="section-title">新人常见疑问</h2>

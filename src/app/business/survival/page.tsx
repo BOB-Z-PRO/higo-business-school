@@ -97,6 +97,9 @@ export default function SurvivalPage() {
       <section style={{ background: 'white', padding: '24px 0' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <Link href="/business/survival/7-day" className="quick-access-btn" style={{ background: '#38A169', color: 'white' }}>
+              <BookOpen size={18} /> 新人 7 天启动营
+            </Link>
             <Link href="/business/survival/objections" className="quick-access-btn" style={{ background: '#E53E3E', color: 'white' }}>
               <MessageCircle size={18} /> 新人疑义解答
             </Link>

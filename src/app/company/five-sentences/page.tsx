@@ -55,7 +55,7 @@ const fiveSentences = [
     title: '四大红利',
     desc: '全方位的收益来源',
     details: [
-      '生命红利：四大基因抗衰产品，轻松逆龄8.5-34岁',
+    '生命红利：四大基因抗衰产品，支持年轻态管理',
       '支付红利：全球首创VIS卡，消费即产生PV值，提现更快更安全',
       '连锁红利：万店连锁，一连终身，流量红利+推店奖励+营业额提点',
       '数据红利：有效数据变现，流量多渠道变现，主体上市时共享资本价值',
@@ -83,7 +83,7 @@ const fourDividends = [
     title: '生命红利',
     color: '#38A169',
     points: [
-      'GnAKG：人类长寿科技的天花板，轻松逆龄8.5-34岁',
+    'GnAKG：围绕细胞能量与年轻态管理的核心产品',
       'Gn抑癌剂：阻断癌细胞裂变',
       'Gn脑动力：大脑回春更年轻',
       'Gn生殖修复：修复男女生殖，肾气充沛',
@@ -384,7 +384,7 @@ export default function CompanyFiveSentencesPage() {
             <div style={{ background: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', borderRadius: '16px', padding: '32px', color: 'white' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px' }}>使命</h3>
               <p style={{ lineHeight: 1.8, opacity: 0.95 }}>
-                用基因科技，创造生命奇迹！把会员对健康、逆龄、美丽与财富的追求变成现实！
+              用基因科技支持长期健康管理，把会员对健康、年轻态与长期成长的追求转化为持续行动。
               </p>
             </div>
           </div>

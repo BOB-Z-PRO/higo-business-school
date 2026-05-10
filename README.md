@@ -13,6 +13,25 @@ HIGO 商学院当前版本已从“静态页面拼装”推进到更适合持续
 - 为首页、产品页、经营篇、课程详情补充 metadata
 - 让 `npm run build` 在当前 Windows 本地环境中可通过
 
+v1.1 第一批新增：
+
+- 新人 7 天启动营页面：`/business/survival/7-day`
+- 启动营数据文件：`src/lib/seven-day-data.ts`
+- 启动营组件：`SevenDayCard`、`ActionTaskCard`
+- 生存空间页新增启动营快捷入口
+
+v1.1 第二至第四批新增：
+
+- 话术训练库：`/scripts`
+- 话术数据文件：`src/lib/scripts-data.ts`
+- 话术组件：`src/components/scripts/script-card.tsx`
+- 会议 SOP 库：`/meetings/playbooks`
+- 会议 SOP 数据文件：`src/lib/meeting-playbooks-data.ts`
+- 会议 SOP 组件：`src/components/meetings/meeting-playbook-card.tsx`
+- 合规表达替换库：`/compliance/phrasebook`
+- 替换库数据文件：`src/lib/compliance-phrasebook-data.ts`
+- 替换库组件：`src/components/compliance/phrasebook-card.tsx`
+
 ## 技术栈
 
 - Next.js 14 App Router

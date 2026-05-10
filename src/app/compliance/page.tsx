@@ -57,7 +57,7 @@ const complianceQA = [
   { q: '可以用别人的检测报告推荐产品吗？', a: '可以展示检测报告作为参考，说明"这位家人的检测结果显示...（因人而异）"，但不能用别人的报告为产品效果做承诺。' },
   { q: '可以晒收入截图吗？', a: '可以分享真实收入（注明因人而异），但不能承诺收益，不能暗示"你也可以月入X万"。' },
   { q: '别人问能不能治好XX病怎么回答？', a: '绝对不能承诺治疗效果。可以说"产品是基因抗衰食品，帮助细胞提升活力，建议先了解体验"。建议邀请参加产品专场会了解。' },
-  { q: '可以用"富婆"、"逆龄"等词形容自己吗？', a: '"富婆"等词属于夸大宣传，不建议使用。"逆龄"如果是指外表状态改善且有真实依据可以使用，但同样要注明因人而异。' },
+  { q: '可以用“富婆”或“逆龄”这类词形容自己吗？', a: '“富婆”这类词属于夸大宣传，不建议使用。关于状态变化，建议统一使用“年轻态管理”或“状态改善”这类更稳妥的表达，并注明因人而异。' },
   { q: '早会内容可以转发到朋友圈吗？', a: '可以转发公司统一提供的早会内容，但禁止添加任何收益承诺或疾病治疗描述。转发前请检查是否有“必然”“一定”等绝对化用语。' },
   { q: '可以在群里发红包奖励业绩吗？', a: '可以有小额奖励行为，但禁止以"承诺明确收益"、"稳赚"等名义发红包。红包奖励应是庆祝小胜利，而非承诺收益。' },
   { q: '新人刚加入要建群讲课吗？', a: '新人应先完成N-01~N-10课程学习再建群，且内容必须使用公司统一提供的课件，不建议自己随意发挥讲内容。' },
@@ -108,6 +108,16 @@ export default function CompliancePage() {
       {/* Company Rules */}
       <section className="section">
         <div className="container">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
+            <div>
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 700, marginBottom: '6px' }}>新增风控工具</div>
+              <h2 style={{ fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-dark)' }}>合规表达替换库</h2>
+            </div>
+            <Link href="/compliance/phrasebook" className="btn btn-primary">
+              进入替换库
+            </Link>
+          </div>
+
           <div className="section-header">
             <span className="section-badge">Rules</span>
             <h2 className="section-title">公司守则</h2>

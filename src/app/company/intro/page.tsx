@@ -105,7 +105,7 @@ export default function CompanyIntroPage() {
               </div>
               <div className="mobile-card-body">
                 <p style={{ color: 'var(--text-dark)', fontSize: '0.9375rem', lineHeight: 1.7, fontWeight: 500 }}>
-                  点燃生命极光，照见百岁青春，让你对健康、逆龄、美丽与财富的追求变为现实。
+                  点燃长期成长的动力，让你对健康、年轻态和美好生活的追求更有方向。
                 </p>
               </div>
             </div>
