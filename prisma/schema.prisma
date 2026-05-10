@@ -38,6 +38,8 @@ model School {
   icon        String?
   color       String?
   order       Int      @default(0)
+  homeBase    String?  @map("home_base") // 生存家园/生活家园/生命家园
+  learningPath Int     @default(1)       // 1=新人起步, 2=生存家园, 3=生活家园, 4=生命家园
   chapters    Chapter[]
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -74,26 +76,30 @@ model Module {
 }
 
 model Course {
-  id          String   @id @default(cuid())
-  title       String
-  description String?
-  content     String?  @db.Text
-  type        CourseType @default(TEXT)
-  videoUrl    String?  @map("video_url")
-  audioUrl    String?  @map("audio_url")
-  thumbnail   String?
-  duration    Int?     @default(0)
-  order       Int      @default(0)
-  moduleId    String   @map("module_id")
-  module      Module   @relation(fields: [moduleId], references: [id], onDelete: Cascade)
-  teacherId   String?  @map("teacher_id")
-  teacher     Teacher? @relation(fields: [teacherId], references: [id])
-  attachments Attachment[]
-  enrollments Enrollment[]
-  progress    CourseProgress[]
-  comments    Comment[]
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String       @id @default(cuid())
+  title          String
+  description    String?
+  content        String?      @db.Text
+  type           CourseType   @default(TEXT)
+  videoUrl       String?      @map("video_url")
+  audioUrl       String?      @map("audio_url")
+  thumbnail      String?
+  duration       Int?         @default(0)
+  order          Int          @default(0)
+  moduleId       String       @map("module_id")
+  teacherId      String?      @map("teacher_id")
+  assessmentType String?      @map("assessment_type") // QUIZ/EXERCISE/INTERVIEW/NONE
+  passingScore   Int?         @default(60) @map("passing_score")
+  timeLimit      Int?         @map("time_limit") // minutes, null = no limit
+  module         Module       @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  teacher        Teacher?     @relation(fields: [teacherId], references: [id])
+  attachments    Attachment[]
+  enrollments    Enrollment[]
+  progress       CourseProgress[]
+  comments       Comment[]
+  quizzes        Quiz[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
 
   @@map("courses")
 }
@@ -185,6 +191,32 @@ model LearningRule {
   updatedAt DateTime @updatedAt
 
   @@map("learning_rules")
+}
+
+model Quiz {
+  id        String   @id @default(cuid())
+  courseId  String   @map("course_id")
+  course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  questions QuizQuestion[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("quizzes")
+}
+
+model QuizQuestion {
+  id            String   @id @default(cuid())
+  quizId        String   @map("quiz_id")
+  quiz          Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  question      String   @db.Text
+  options       Json     // Array of {key: string, text: string}
+  correctAnswer String   @map("correct_answer") // The key of the correct option
+  explanation   String?  @db.Text
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("quiz_questions")
 }
 
 model SiteSettings {

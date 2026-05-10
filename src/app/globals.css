@@ -1353,3 +1353,940 @@ h4 { font-size: 1.25rem; font-weight: 600; }
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   Markdown Content Styles
+   ======================================== */
+.markdown-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-gray);
+}
+
+.markdown-content h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.markdown-content h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 28px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.markdown-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 24px 0 8px;
+}
+
+.markdown-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 20px 0 6px;
+}
+
+.markdown-content p {
+  margin: 12px 0;
+  color: var(--text-gray);
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+}
+
+.markdown-content li {
+  margin: 8px 0;
+  color: var(--text-gray);
+}
+
+.markdown-content li::marker {
+  color: var(--primary-blue);
+}
+
+.markdown-content blockquote {
+  background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+  border-left: 4px solid var(--primary-blue);
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+}
+
+.markdown-content blockquote p {
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.markdown-content strong {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: var(--text-gray);
+}
+
+.markdown-content code {
+  background: var(--bg-gray);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.875em;
+  color: var(--primary-blue);
+}
+
+.markdown-content pre {
+  background: var(--primary-dark);
+  color: #E2E8F0;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.875rem;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9375rem;
+}
+
+.markdown-content th,
+.markdown-content td {
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.markdown-content th {
+  background: var(--bg-gray);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.markdown-content tr:nth-child(even) {
+  background: var(--bg-gray);
+}
+
+.markdown-content a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: var(--primary-dark);
+}
+
+.markdown-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: 16px 0;
+}
+
+.markdown-content input[type="checkbox"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--green);
+}
+
+/* ========================================
+   PRD Home Spaces Grid (Module 2)
+   ======================================== */
+.home-spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.home-space-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+}
+
+.home-space-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.home-space-header {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+}
+
+.home-space-card.survival .home-space-header {
+  background: linear-gradient(135deg, #38A169 0%, #68D391 100%);
+}
+
+.home-space-card.living .home-space-header {
+  background: linear-gradient(135deg, #805AD5 0%, #B794F4 100%);
+}
+
+.home-space-card.life .home-space-header {
+  background: linear-gradient(135deg, #D69E2E 0%, #F6E05E 100%);
+}
+
+.home-space-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.home-space-header h3 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.home-space-tag {
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+
+.home-space-content {
+  padding: 24px;
+}
+
+.home-space-content p {
+  color: var(--text-gray);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.home-space-goals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.home-space-goals span {
+  background: var(--bg-gray);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: var(--text-gray);
+}
+
+.home-space-btn {
+  display: block;
+  text-align: center;
+  padding: 12px 24px;
+  margin: 0 24px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  color: white;
+  transition: var(--transition);
+}
+
+.home-space-card.survival .home-space-btn {
+  background: linear-gradient(135deg, #38A169 0%, #68D391 100%);
+}
+
+.home-space-card.living .home-space-btn {
+  background: linear-gradient(135deg, #805AD5 0%, #B794F4 100%);
+}
+
+.home-space-card.life .home-space-btn {
+  background: linear-gradient(135deg, #D69E2E 0%, #F6E05E 100%);
+}
+
+.home-space-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   PRD Learning Entrances (Module 3)
+   ======================================== */
+.learning-entrances {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.entrance-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: block;
+}
+
+.entrance-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.entrance-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.entrance-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.entrance-card p {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   PRD Newcomer Cards (Module 4)
+   ======================================== */
+.newcomer-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.newcomer-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: block;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.newcomer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.newcomer-num {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.newcomer-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.newcomer-card p {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+/* ========================================
+   PRD Featured Courses (Module 5)
+   ======================================== */
+.featured-courses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.featured-course-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featured-course-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--primary-blue);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.featured-course-card h4 {
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  padding-right: 80px;
+}
+
+.featured-course-card p {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+.featured-course-meta {
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   PRD Meeting Cards (Module 6)
+   ======================================== */
+.meeting-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.meeting-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.meeting-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.meeting-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #1A365D 0%, #2C5282 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.meeting-info h4 {
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.meeting-info p {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.meeting-meta {
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+/* ========================================
+   Responsive for PRD Modules
+   ======================================== */
+@media (max-width: 1024px) {
+  .home-spaces-grid { grid-template-columns: repeat(2, 1fr); }
+  .learning-entrances { grid-template-columns: repeat(2, 1fr); }
+  .featured-courses { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .home-spaces-grid { grid-template-columns: 1fr; }
+  .newcomer-cards { grid-template-columns: repeat(2, 1fr); }
+  .meeting-cards { grid-template-columns: 1fr; }
+  .meeting-card { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .learning-entrances { grid-template-columns: 1fr; }
+  .newcomer-cards { grid-template-columns: 1fr; }
+  .featured-courses { grid-template-columns: 1fr; }
+}
+
+/* ========================================
+   Course Detail Page Styles
+   ======================================== */
+.course-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.course-meta-item {
+  background: var(--bg-gray);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.course-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.course-section-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .course-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-meta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .course-meta-item {
+    padding: 10px 12px;
+  }
+}
+
+/* ========================================
+   Objection Q&A Styles (Business/Survival)
+   ======================================== */
+.objection-category {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.objection-item {
+  padding: 20px;
+  background: var(--bg-gray);
+  border-radius: var(--radius-md);
+}
+
+.objection-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.9375rem;
+}
+
+.objection-a {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-left: 28px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ========================================
+   Resource Card Styles (Resources Page)
+   ======================================== */
+.resource-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   Meeting Type Card Styles (Meetings Page)
+   ======================================== */
+.meeting-type-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.meeting-type-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   Responsive for Objection & Resource Pages
+   ======================================== */
+@media (max-width: 1024px) {
+  .objection-category .objection-item {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .objection-q,
+  .objection-a {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .objection-a {
+    padding-left: 0;
+    margin-top: 8px;
+  }
+}
+
+/* ========================================
+   Mobile Card System - Course Detail
+   ======================================== */
+.course-hero-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.course-hero-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.course-hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.course-hero-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.course-hero-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.course-hero-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.course-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  opacity: 0.9;
+}
+
+.course-hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Mobile Card Base */
+.mobile-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.mobile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobile-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.mobile-card-body {
+  padding: 16px;
+}
+
+/* Mobile Card Grid - 2 columns */
+.mobile-card-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Mobile Card Grid - flexible */
+.mobile-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+/* Mobile Card Stack */
+.mobile-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Golden Card */
+.mobile-card-golden {
+  color: white;
+}
+
+/* Link Card */
+.mobile-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* Mobile Card Item (for meta grid) */
+.mobile-card-item {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-card-label {
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.mobile-card-value {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Mobile Nav Buttons */
+.mobile-nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.mobile-nav-buttons .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+/* ========================================
+   Responsive Mobile Card Styles
+   ======================================== */
+@media (max-width: 768px) {
+  .course-hero-content {
+    gap: 12px;
+  }
+
+  .course-hero-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .course-hero-title {
+    font-size: 1.125rem;
+  }
+
+  .course-hero-meta {
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+
+  .mobile-card-body {
+    padding: 14px;
+  }
+
+  .mobile-card-header {
+    padding: 10px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .mobile-card-grid-2 {
+    gap: 10px;
+  }
+
+  .mobile-nav-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile-nav-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .course-hero-tags {
+    justify-content: center;
+  }
+
+  .course-hero-meta {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .mobile-card-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   Button Styles
+   ======================================== */
+.btn-primary {
+  background: linear-gradient(135deg, #38A169 0%, #68D391 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.btn-secondary-outline {
+  background: transparent;
+  color: var(--text-gray);
+  border: 1px solid var(--border);
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-secondary-outline:hover {
+  background: var(--bg-gray);
+  border-color: var(--text-light);
+}

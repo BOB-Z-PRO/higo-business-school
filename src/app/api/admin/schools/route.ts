@@ -3,8 +3,28 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
+    const { searchParams } = new URL(request.url)
+    const includeChapters = searchParams.get('includeChapters') === 'true'
+
+    if (includeChapters) {
+      const schools = await prisma.school.findMany({
+        include: {
+          chapters: {
+            include: {
+              modules: {
+                orderBy: { order: 'asc' }
+              }
+            },
+            orderBy: { order: 'asc' }
+          }
+        },
+        orderBy: { order: 'asc' },
+      })
+      return NextResponse.json({ schools })
+    }
+
     const schools = await prisma.school.findMany({
       include: {
         _count: { select: { chapters: true } },

@@ -29,7 +29,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
       return NextResponse.json({ error: '课程不存在' }, { status: 404 })
     }
 
-    return NextResponse.json(course)
+    return NextResponse.json({ course })
   } catch (error) {
     console.error('Get course error:', error)
     return NextResponse.json({ error: '获取课程失败' }, { status: 500 })
