@@ -12,6 +12,14 @@ const strategy = {
   productPositioning: '生命科技 · 基因修复 · 人体生态重建',
 }
 
+const fiveSentences = [
+  { num: '一', title: '一个生态系统', desc: '海购是完整的商业生态系统，集产品、平台、教育、服务于一体' },
+  { num: '二', title: '两个体制', desc: '全员股权分红制 + 功勋福利制' },
+  { num: '三', title: '三大家园', desc: '完整的经营者成长路径' },
+  { num: '四', title: '四大红利', desc: '全方位的收益来源' },
+  { num: '五', title: '全球市场', desc: '业务覆盖全球6个国家' },
+]
+
 const twoSystems = {
   title: '两个体制',
   items: [
