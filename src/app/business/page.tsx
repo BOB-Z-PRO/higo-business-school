@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ComplianceNotice from '@/components/common/compliance-notice'
 import Footer from '@/components/layout/footer'
@@ -15,167 +15,143 @@ export const metadata: Metadata = {
 
 export default function BusinessPage() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
+    <div className="academy-page-shell">
       <Header activePath="/business" />
 
-      <section style={{ background: 'linear-gradient(135deg, #1A365D 0%, #2C5282 100%)', color: 'white', padding: '80px 0' }}>
-        <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '40px', marginTop: '24px' }}>
-            <div style={{ fontSize: '5rem' }}>📈</div>
-            <div>
-              <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '8px' }}>经营篇</h1>
-              <p style={{ fontSize: '1.125rem', opacity: 0.9, maxWidth: '600px' }}>
-                将经营过程拆成阶段、动作和表达三层结构，帮助页面内容更容易维护，也帮助伙伴按阶段前进。
-              </p>
+      <section className="academy-hero" style={{ ['--hero-start' as string]: '#0f172a', ['--hero-end' as string]: '#0f766e' }}>
+        <div className="container academy-hero-grid">
+          <div className="academy-hero-inner">
+            <span className="academy-kicker">Growth Path</span>
+            <h1>经营篇</h1>
+            <p className="academy-hero-copy">
+              将经营过程拆成阶段、动作和表达三层结构，帮助页面内容更容易维护，也帮助伙伴按阶段前进。
+            </p>
+          </div>
+
+          <div className="academy-hero-aside">
+            <div className="academy-hero-stat">
+              <strong>3 大空间</strong>
+              <span>从新人启动到团队复制，建立清晰成长阶梯</span>
+            </div>
+            <div className="academy-hero-stat">
+              <strong>动作优先</strong>
+              <span>课程、会议、跟进和表达统一到可执行节奏中</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="premium-section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-badge">Path</span>
-            <h2 className="section-title">三大空间成长路径</h2>
-            <p className="section-desc">先建立路径感，再安排课程、会议和日常动作。</p>
+          <div className="premium-section-header">
+            <span className="premium-badge">Path</span>
+            <h2 className="premium-title">三大空间成长路径</h2>
+            <p className="premium-desc content-narrow">先建立路径感，再安排课程、会议和日常动作。</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '40px' }}>
+          <div className="academy-grid-auto" style={{ marginTop: '2rem' }}>
             {businessSpaces.map((space) => (
-              <div key={space.id} className="home-space-detail-card">
-                <div style={{ background: space.gradient, padding: '24px 32px', display: 'flex', alignItems: 'center', gap: '20px', color: 'white' }}>
-                  <div
-                    style={{
-                      width: '64px',
-                      height: '64px',
-                      background: 'rgba(255,255,255,0.2)',
-                      borderRadius: '16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '2rem',
-                    }}
-                  >
-                    {space.icon}
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '4px' }}>{space.name}</h3>
-                    <p style={{ opacity: 0.9, fontSize: '0.9rem' }}>
-                      {space.subtitle} · {space.level}
-                    </p>
-                  </div>
-                  <div style={{ textAlign: 'right' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.2)', padding: '8px 16px', borderRadius: '8px', marginBottom: '4px' }}>
-                      <div style={{ fontWeight: 700 }}>{space.courses} 门课程</div>
-                      <div style={{ fontSize: '0.75rem', opacity: 0.8 }}>{space.duration}</div>
+              <article key={space.id} className="academy-link-card">
+                <div className="academy-link-card-top" style={{ background: space.gradient }}>
+                  <div className="academy-link-card-row">
+                    <span className="academy-link-card-icon">{space.icon}</span>
+                    <div>
+                      <h3 style={{ fontSize: '1.2rem', marginBottom: '0.28rem' }}>{space.name}</h3>
+                      <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: '0.82rem', lineHeight: 1.65 }}>
+                        {space.subtitle} · {space.level}
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div style={{ padding: '24px 32px' }}>
-                  <p style={{ color: 'var(--text-gray)', marginBottom: '20px', lineHeight: 1.7 }}>{space.description}</p>
-                  <div style={{ marginBottom: '20px' }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-light)', marginBottom: '8px', fontWeight: 600 }}>阶段目标</div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                      {space.goals.map((goal) => (
-                        <span
-                          key={goal}
-                          style={{
-                            background: `${space.color}15`,
-                            color: space.color,
-                            padding: '6px 14px',
-                            borderRadius: '50px',
-                            fontSize: '0.8125rem',
-                            fontWeight: 500,
-                          }}
-                        >
-                          {goal}
-                        </span>
-                      ))}
-                    </div>
+
+                <div className="academy-link-card-body">
+                  <p>{space.description}</p>
+
+                  <div className="academy-chip-list" style={{ ['--accent-color' as string]: space.color }}>
+                    {space.goals.map((goal) => (
+                      <span key={goal} className="academy-chip">
+                        {goal}
+                      </span>
+                    ))}
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+
+                  <div className="academy-grid-3">
                     {space.features.map((feature) => (
-                      <div key={feature.title} style={{ background: 'var(--bg-gray)', padding: '16px', borderRadius: '12px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                          <span style={{ fontSize: '1.25rem' }}>{feature.icon}</span>
-                          <span style={{ fontWeight: 600, color: 'var(--text-dark)' }}>{feature.title}</span>
+                      <div key={feature.title} className="academy-feature-card" style={{ ['--accent-color' as string]: space.color }}>
+                        <div className="academy-feature-card-head">
+                          <span className="academy-feature-card-mark">{feature.icon}</span>
+                          <h3>{feature.title}</h3>
                         </div>
-                        <p style={{ color: 'var(--text-gray)', fontSize: '0.8125rem', lineHeight: 1.5 }}>{feature.desc}</p>
+                        <p>{feature.desc}</p>
                       </div>
                     ))}
                   </div>
-                  <div style={{ marginTop: '20px' }}>
-                    <Link href={`/business/${space.id}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: space.color, color: 'white', padding: '12px 24px', borderRadius: '8px', fontWeight: 600 }}>
-                      进入 {space.name} →
+
+                  <div className="academy-cta-row">
+                    <Link href={`/business/${space.id}`} className="btn btn-primary">
+                      进入 {space.name}
                     </Link>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="premium-section" style={{ background: 'rgba(226, 232, 240, 0.42)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px', marginBottom: '32px' }}>
+          <div className="academy-overview-link-grid" style={{ marginBottom: '2rem' }}>
             {[
               {
                 href: '/business/survival/7-day',
                 title: '新人 7 天启动营',
                 description: '先让新人知道今天学什么、做什么、哪些话不能说。',
-                color: '#38A169',
               },
               {
                 href: '/scripts',
                 title: '话术训练库',
                 description: '按邀约、产品、跟进、异议等场景统一表达。',
-                color: '#805AD5',
               },
             ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                style={{
-                  background: 'white',
-                  borderRadius: '16px',
-                  padding: '20px',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.06)',
-                  borderTop: `4px solid ${item.color}`,
-                }}
-              >
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '8px' }}>{item.title}</h3>
-                <p style={{ color: 'var(--text-gray)', lineHeight: 1.7, fontSize: '0.88rem' }}>{item.description}</p>
+              <Link key={item.href} href={item.href} className="academy-overview-link">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </Link>
             ))}
           </div>
 
-          <div className="section-header">
-            <span className="section-badge">Q&amp;A</span>
-            <h2 className="section-title">新人常见疑问</h2>
-            <p className="section-desc">把常见问题分类沉淀下来，更利于后续扩展与统一答复。</p>
+          <div className="premium-section-header">
+            <span className="premium-badge">Q&amp;A</span>
+            <h2 className="premium-title">新人常见疑问</h2>
+            <p className="premium-desc content-narrow">把常见问题分类沉淀下来，更利于后续扩展与统一答复。</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', marginTop: '40px' }}>
+          <div className="mobile-card-grid" style={{ marginTop: '2rem' }}>
             {businessObjections.map((item) => (
-              <Link key={item.title} href="/business/survival/objections" className="objection-card" style={{ borderTop: `4px solid ${item.color}` }}>
+              <Link
+                key={item.title}
+                href="/business/survival/objections"
+                className="objection-card mobile-card-body"
+                style={{ borderTop: `4px solid ${item.color}` }}
+              >
                 <div
                   style={{
-                    width: '48px',
-                    height: '48px',
+                    width: '44px',
+                    height: '44px',
                     background: `${item.color}15`,
-                    borderRadius: '12px',
-                    display: 'flex',
+                    borderRadius: '14px',
+                    display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '1.5rem',
-                    marginBottom: '12px',
+                    fontSize: '1.35rem',
+                    marginBottom: '0.8rem',
                   }}
                 >
                   {item.icon}
                 </div>
-                <h4 style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-dark)', marginBottom: '4px' }}>{item.title}</h4>
-                <p style={{ color: 'var(--text-gray)', fontSize: '0.75rem' }}>沉淀 {item.count} 个常见问题</p>
+                <h3>{item.title}</h3>
+                <p>沉淀 {item.count} 个常见问题</p>
               </Link>
             ))}
           </div>
@@ -189,4 +165,3 @@ export default function BusinessPage() {
     </div>
   )
 }
-
