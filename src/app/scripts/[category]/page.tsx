@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ComplianceNotice from '@/components/common/compliance-notice'
@@ -45,30 +46,34 @@ export default function ScriptCategoryPage({ params }: ScriptCategoryPageProps) 
   }
 
   const items = scriptItems.filter((item) => item.category === params.category)
+  const heroStyle = { ['--module-accent' as string]: category.color } as CSSProperties
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
+    <div className="page-shell">
       <Header activePath="/business" />
 
-      <section style={{ background: `linear-gradient(135deg, ${category.color} 0%, #2D3748 100%)`, color: 'white', padding: '72px 0' }}>
+      <section className="module-hero module-hero-accent" style={heroStyle}>
         <div className="container">
-          <Link href="/scripts" style={{ display: 'inline-flex', marginBottom: '18px', background: 'rgba(255,255,255,0.15)', padding: '8px 14px', borderRadius: '999px', fontSize: '0.84rem', fontWeight: 700 }}>
+          <Link href="/scripts" className="module-hero-back-link">
             返回话术总入口
           </Link>
-          <h1 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '12px' }}>{category.title}</h1>
-          <p style={{ fontSize: '1.02rem', opacity: 0.92, lineHeight: 1.8, maxWidth: '760px' }}>{category.description}</p>
+          <div className="module-hero-inner">
+            <span className="module-hero-kicker">{category.shortTitle}</span>
+            <h1>{category.title}</h1>
+            <p className="module-hero-description">{category.description}</p>
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="premium-section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-badge">{category.shortTitle}</span>
-            <h2 className="section-title">{category.title}示例</h2>
-            <p className="section-desc">每条都包含推荐说法、不建议说法、合规提醒和复制按钮。</p>
+          <div className="premium-section-header">
+            <span className="premium-badge">{category.shortTitle}</span>
+            <h2 className="premium-title">{category.title}示例</h2>
+            <p className="premium-desc content-narrow">每条都包含推荐说法、不建议说法、合规提醒和复制按钮。</p>
           </div>
 
-          <div style={{ display: 'grid', gap: '18px' }}>
+          <div className="script-card-list">
             {items.map((item) => (
               <ScriptCard key={item.id} item={item} accentColor={category.color} />
             ))}

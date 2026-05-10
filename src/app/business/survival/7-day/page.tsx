@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import ComplianceNotice from '@/components/common/compliance-notice'
 import Footer from '@/components/layout/footer'
@@ -16,54 +17,53 @@ export const metadata: Metadata = {
 
 export default function SevenDayCampPage() {
   const todayTask = sevenDayTasks[0]
+  const heroStyle = { ['--module-accent' as string]: '#10B981' } as CSSProperties
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
+    <div className="page-shell">
       <Header activePath="/business" />
 
-      <section style={{ background: 'linear-gradient(135deg, #38A169 0%, #68D391 100%)', color: 'white', padding: '72px 0' }}>
+      <section className="module-hero module-hero-green" style={heroStyle}>
         <div className="container">
-          <div style={{ maxWidth: '760px' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.18)', padding: '6px 14px', borderRadius: '999px', fontSize: '0.85rem', fontWeight: 700, marginBottom: '20px' }}>
-              生存空间 · 新人启动系统
-            </div>
-            <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '12px' }}>{sevenDayOverview.title}</h1>
-            <p style={{ fontSize: '1.1rem', opacity: 0.95, lineHeight: 1.8, marginBottom: '14px' }}>{sevenDayOverview.subtitle}</p>
-            <p style={{ fontSize: '0.98rem', opacity: 0.88, lineHeight: 1.8 }}>{sevenDayOverview.description}</p>
+          <div className="module-hero-inner content-narrow">
+            <span className="module-hero-kicker">生存空间 · 新人启动系统</span>
+            <h1>{sevenDayOverview.title}</h1>
+            <p className="module-hero-subtitle">{sevenDayOverview.subtitle}</p>
+            <p className="module-hero-description">{sevenDayOverview.description}</p>
           </div>
         </div>
       </section>
 
-      <section style={{ background: 'white', padding: '24px 0', borderBottom: '1px solid var(--border)' }}>
+      <section className="premium-section module-overview-strip">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px' }}>
+          <div className="overview-stat-grid mobile-two-col">
             {[
               ['7 天路径', '每天有学习、动作、话术和禁语'],
               ['1 条主线', '从认知到邀约到听会复盘'],
               ['合规优先', '所有表达都先过合规边界'],
               ['下一阶段', '完成后转入 30 天经营训练'],
             ].map(([title, desc]) => (
-              <div key={title} style={{ background: 'var(--bg-gray)', borderRadius: '14px', padding: '18px' }}>
-                <div style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '8px' }}>{title}</div>
-                <p style={{ color: 'var(--text-gray)', fontSize: '0.84rem', lineHeight: 1.6 }}>{desc}</p>
+              <div key={title} className="overview-stat-card stat-card">
+                <div className="overview-stat-title">{title}</div>
+                <p>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="premium-section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', alignItems: 'stretch' }}>
-            <div style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.06)' }}>
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 700, marginBottom: '10px' }}>今日推荐学习</div>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '10px' }}>
+          <div className="premium-card-grid-2 seven-day-hero-grid">
+            <div className="premium-card seven-day-summary-card">
+              <div className="premium-badge">今日推荐学习</div>
+              <h2 className="seven-day-summary-title">
                 Day {todayTask.day} · {todayTask.title}
               </h2>
-              <p style={{ color: 'var(--text-gray)', lineHeight: 1.8, marginBottom: '16px' }}>{todayTask.learningGoal}</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '18px' }}>
+              <p className="mobile-readable">{todayTask.learningGoal}</p>
+              <div className="seven-day-summary-chips">
                 {todayTask.actionTasks.slice(0, 3).map((task) => (
-                  <span key={task} style={{ background: 'var(--bg-gray)', padding: '6px 12px', borderRadius: '999px', fontSize: '0.82rem', color: 'var(--text-gray)' }}>
+                  <span key={task} className="seven-day-summary-chip">
                     {task}
                   </span>
                 ))}
@@ -73,13 +73,13 @@ export default function SevenDayCampPage() {
               </Link>
             </div>
 
-            <div style={{ background: 'linear-gradient(135deg, #1A365D 0%, #2C5282 100%)', color: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.06)' }}>
-              <div style={{ fontSize: '0.8rem', opacity: 0.85, fontWeight: 700, marginBottom: '10px' }}>完成后下一阶段</div>
-              <h2 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '10px' }}>30 天经营训练</h2>
-              <p style={{ opacity: 0.9, lineHeight: 1.8, marginBottom: '18px' }}>
+            <div className="glass-card seven-day-next-stage">
+              <div className="premium-badge">完成后下一阶段</div>
+              <h2>30 天经营训练</h2>
+              <p>
                 当 7 天启动营完成后，下一步不是继续堆资料，而是进入稳定分享、带新人和借力会议的经营节奏。
               </p>
-              <Link href={sevenDayOverview.nextStageHref} className="btn" style={{ background: 'white', color: '#1A365D' }}>
+              <Link href={sevenDayOverview.nextStageHref} className="btn btn-light">
                 {sevenDayOverview.nextStageLabel}
               </Link>
             </div>
@@ -87,15 +87,15 @@ export default function SevenDayCampPage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="premium-section section-surface">
         <div className="container">
-          <div className="section-header">
-            <span className="section-badge">7-Day Camp</span>
-            <h2 className="section-title">7 天任务总览</h2>
-            <p className="section-desc">每天都包含学什么、怎么说、怎么做、不能说什么和下一步。</p>
+          <div className="premium-section-header">
+            <span className="premium-badge">7-Day Camp</span>
+            <h2 className="premium-title">7 天任务总览</h2>
+            <p className="premium-desc content-narrow">每天都包含学什么、怎么说、怎么做、不能说什么和下一步。</p>
           </div>
 
-          <div style={{ display: 'grid', gap: '24px' }}>
+          <div className="seven-day-stack">
             {sevenDayTasks.map((task) => (
               <div id={`day-${task.day}`} key={task.day}>
                 <SevenDayCard task={task} />

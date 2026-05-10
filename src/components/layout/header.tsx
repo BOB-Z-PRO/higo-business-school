@@ -17,11 +17,11 @@ function isActiveLink(activePath: string | undefined, href: string) {
 
 export default function Header({ activePath, rightSlot }: HeaderProps) {
   return (
-    <header className="header">
+    <header className="header header-shell">
       <div className="header-inner">
-        <Link href="/" className="logo">
-          <div className="logo-icon">H</div>
-          <div>
+        <Link href="/" className="logo header-brand">
+          <div className="logo-icon logo-mark">H</div>
+          <div className="logo-copy">
             <div className="logo-text">HIGO 全球商学院</div>
             <div className="logo-sub">HIGO Global Business School</div>
           </div>
@@ -36,7 +36,7 @@ export default function Header({ activePath, rightSlot }: HeaderProps) {
               {item.label}
             </Link>
           ))}
-          {rightSlot}
+          <div className="header-actions">{rightSlot}</div>
         </nav>
       </div>
     </header>
