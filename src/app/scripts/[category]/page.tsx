@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ComplianceNotice from '@/components/common/compliance-notice'
@@ -46,18 +45,17 @@ export default function ScriptCategoryPage({ params }: ScriptCategoryPageProps) 
   }
 
   const items = scriptItems.filter((item) => item.category === params.category)
-  const heroStyle = { ['--module-accent' as string]: category.color } as CSSProperties
 
   return (
     <div className="page-shell">
       <Header activePath="/business" />
 
-      <section className="module-hero module-hero-accent" style={heroStyle}>
+      <section className="module-hero">
         <div className="container">
           <Link href="/scripts" className="module-hero-back-link">
             返回话术总入口
           </Link>
-          <div className="module-hero-inner">
+          <div className="module-hero-inner content-narrow">
             <span className="module-hero-kicker">{category.shortTitle}</span>
             <h1>{category.title}</h1>
             <p className="module-hero-description">{category.description}</p>
@@ -65,12 +63,12 @@ export default function ScriptCategoryPage({ params }: ScriptCategoryPageProps) 
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="ui-section">
         <div className="container">
-          <div className="premium-section-header">
-            <span className="premium-badge">{category.shortTitle}</span>
-            <h2 className="premium-title">{category.title}示例</h2>
-            <p className="premium-desc content-narrow">每条都包含推荐说法、不建议说法、合规提醒和复制按钮。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">{category.shortTitle}</span>
+            <h2 className="ui-title">{category.title}示例</h2>
+            <p className="ui-desc ui-readable">每条都包含推荐说法、不建议说法、合规提醒和复制按钮。</p>
           </div>
 
           <div className="script-card-list">

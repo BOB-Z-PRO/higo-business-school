@@ -16,7 +16,6 @@ export default function MobileNav({ activePath, items }: MobileNavProps) {
     <div className="mobile-nav" aria-label="移动端主导航">
       {items.map((item) => {
         const active = activePath === item.href || (item.href !== '/' && activePath?.startsWith(item.href))
-
         return (
           <Link
             key={item.href}

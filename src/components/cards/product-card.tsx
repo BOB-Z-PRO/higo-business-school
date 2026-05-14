@@ -18,30 +18,28 @@ export default function ProductCard({
   subtitle,
   description,
   color,
-  gradient,
   keyBenefits,
 }: ProductCardProps) {
   return (
-    <Link href={href} className="product-card-large">
-      <div className="product-card-large-head" style={{ background: gradient }}>
+    <Link href={href} className="product-card-large ui-card" style={{ ['--accent-color' as string]: color }}>
+      <div className="product-card-large-head">
         <div className="product-card-large-head-row">
           <div className="product-card-large-icon">
             {icon}
           </div>
           <div>
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '4px' }}>{name}</h3>
-            <p style={{ opacity: 0.9, fontSize: '0.86rem', lineHeight: 1.6 }}>{subtitle}</p>
+            <h3>{name}</h3>
+            <p>{subtitle}</p>
           </div>
         </div>
       </div>
       <div className="product-card-large-body">
-        <p style={{ color: 'var(--premium-slate)', lineHeight: 1.78 }}>{description}</p>
+        <p>{description}</p>
         <div className="product-card-large-benefits">
           {keyBenefits.map((benefit) => (
             <span
               key={benefit}
               className="product-card-large-benefit"
-              style={{ background: `${color}14`, color, border: `1px solid ${color}22` }}
             >
               {benefit}
             </span>

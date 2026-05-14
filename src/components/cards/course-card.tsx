@@ -10,7 +10,7 @@ type CourseCardProps = {
 
 export default function CourseCard({ href, tag, title, description, meta }: CourseCardProps) {
   return (
-    <Link href={href} className="featured-course-card premium-card mobile-compact-card">
+    <Link href={href} className="featured-course-card ui-card-compact">
       <div className="featured-course-head">
         <div className="featured-course-tag">{tag}</div>
         <span className="featured-course-meta">{meta}</span>

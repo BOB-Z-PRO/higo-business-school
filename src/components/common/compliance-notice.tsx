@@ -14,13 +14,13 @@ export default function ComplianceNotice({
   ctaLabel = '查看合规规范',
 }: ComplianceNoticeProps) {
   return (
-    <section className="premium-section compliance-notice-section">
+    <section className="ui-section compliance-notice-section">
       <div className="container">
         <div className="compliance-notice-card content-narrow">
-          <span className="premium-badge premium-badge-alert">Compliance</span>
-          <h2 className="premium-title">{title}</h2>
-          <p className="premium-desc mobile-readable">{description}</p>
-          <Link href={ctaHref} className="btn btn-light">
+          <span className="ui-eyebrow">Compliance</span>
+          <h2 className="ui-title">{title}</h2>
+          <p className="ui-desc ui-readable">{description}</p>
+          <Link href={ctaHref} className="btn btn-text">
             {ctaLabel}
           </Link>
         </div>

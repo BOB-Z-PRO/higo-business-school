@@ -18,7 +18,7 @@ export default function MeetingPlaybooksPage() {
     <div className="page-shell">
       <Header activePath="/meetings" />
 
-      <section className="module-hero module-hero-blue">
+      <section className="module-hero">
         <div className="container">
           <div className="module-hero-inner content-narrow">
             <span className="module-hero-kicker">Meeting SOP Library</span>
@@ -30,12 +30,12 @@ export default function MeetingPlaybooksPage() {
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="ui-section">
         <div className="container">
-          <div className="premium-section-header">
-            <span className="premium-badge">Playbooks</span>
-            <h2 className="premium-title">三类优先 SOP</h2>
-            <p className="premium-desc content-narrow">先把团队最常用的会议标准化，再谈规模复制。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">Playbooks</span>
+            <h2 className="ui-title">三类优先 SOP</h2>
+            <p className="ui-desc ui-readable">先把团队最常用的会议标准化，再谈规模复制。</p>
           </div>
 
           <div className="playbook-card-grid">

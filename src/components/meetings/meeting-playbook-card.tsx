@@ -11,7 +11,7 @@ export default function MeetingPlaybookCard({ playbook, color }: MeetingPlaybook
   const accentStyle = { ['--accent-color' as string]: color } as CSSProperties
 
   return (
-    <Link href={`/meetings/playbooks/${playbook.type}`} className="playbook-card premium-card" style={accentStyle}>
+    <Link href={`/meetings/playbooks/${playbook.type}`} className="playbook-card ui-card-compact" style={accentStyle}>
       <div className="playbook-card-head">
         <div className="playbook-card-heading">
           <h3>{playbook.title}</h3>

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import ComplianceNotice from '@/components/common/compliance-notice'
 import Footer from '@/components/layout/footer'
@@ -19,7 +18,7 @@ export default function ScriptsPage() {
     <div className="page-shell">
       <Header activePath="/business" />
 
-      <section className="module-hero module-hero-blue">
+      <section className="module-hero">
         <div className="container">
           <div className="module-hero-inner content-narrow">
             <span className="module-hero-kicker">Scripts Library</span>
@@ -31,30 +30,23 @@ export default function ScriptsPage() {
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="ui-section">
         <div className="container">
-          <div className="premium-section-header">
-            <span className="premium-badge">Categories</span>
-            <h2 className="premium-title">7 类训练场景</h2>
-            <p className="premium-desc content-narrow">每一类至少 3 条示例，适合直接复制练习。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">Categories</span>
+            <h2 className="ui-title">7 类训练场景</h2>
+            <p className="ui-desc ui-readable">每一类至少 3 条示例，适合直接复制练习。</p>
           </div>
 
-          <div className="script-category-grid mobile-two-col">
+          <div className="script-category-grid ui-mobile-two">
             {scriptCategories.map((category) => {
               const count = scriptItems.filter((item) => item.category === category.slug).length
 
               return (
-                <Link
-                  key={category.slug}
-                  href={`/scripts/${category.slug}`}
-                  className="script-category-card premium-card mobile-compact-card"
-                  style={{ ['--accent-color' as string]: category.color } as CSSProperties}
-                >
+                <Link key={category.slug} href={`/scripts/${category.slug}`} className="script-category-card ui-card-compact">
                   <div className="script-category-card-head">
                     <h3>{category.title}</h3>
-                    <span className="script-category-count">
-                      {count} 条
-                    </span>
+                    <span className="script-category-count">{count} 条</span>
                   </div>
                   <p>{category.description}</p>
                 </Link>

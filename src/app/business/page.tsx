@@ -9,44 +9,41 @@ import { mobileNavItems } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: '经营篇 | HIGO 全球商学院',
-  description:
-    '经营篇围绕新人启动、稳定经营与复制成长三大空间搭建路径，帮助团队以更清晰、合规、可复制的方式推进学习与动作。',
+  description: '经营篇围绕新人启动、稳定经营与复制成长三大空间，构建清晰、可执行、可复盘的成长路径。',
 }
 
 export default function BusinessPage() {
   return (
-    <div className="academy-page-shell">
+    <div className="page-shell">
       <Header activePath="/business" />
 
-      <section className="academy-hero" style={{ ['--hero-start' as string]: '#0f172a', ['--hero-end' as string]: '#0f766e' }}>
-        <div className="container academy-hero-grid">
-          <div className="academy-hero-inner">
-            <span className="academy-kicker">Growth Path</span>
+      <section className="module-hero">
+        <div className="container">
+          <div className="module-hero-inner">
+            <span className="module-hero-kicker">Growth Path</span>
             <h1>经营篇</h1>
-            <p className="academy-hero-copy">
-              将经营过程拆成阶段、动作和表达三层结构，帮助页面内容更容易维护，也帮助伙伴按阶段前进。
+            <p className="module-hero-subtitle">三大空间，一条成长主线</p>
+            <p className="module-hero-description">
+              把经营过程拆成阶段、动作和表达三层结构，帮助新人知道当下该学什么、该做什么、该避免什么。
             </p>
-          </div>
-
-          <div className="academy-hero-aside">
-            <div className="academy-hero-stat">
-              <strong>3 大空间</strong>
-              <span>从新人启动到团队复制，建立清晰成长阶梯</span>
-            </div>
-            <div className="academy-hero-stat">
-              <strong>动作优先</strong>
-              <span>课程、会议、跟进和表达统一到可执行节奏中</span>
+            <div className="ui-action-row">
+              <Link href="/business/survival" className="btn btn-primary">
+                进入生存空间
+              </Link>
+              <Link href="/scripts" className="btn btn-text">
+                查看话术训练库
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="ui-section">
         <div className="container">
-          <div className="premium-section-header">
-            <span className="premium-badge">Path</span>
-            <h2 className="premium-title">三大空间成长路径</h2>
-            <p className="premium-desc content-narrow">先建立路径感，再安排课程、会议和日常动作。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">Path</span>
+            <h2 className="ui-title">三大空间成长路径</h2>
+            <p className="ui-desc ui-readable">先建立路径感，再安排课程、会议和日常动作。</p>
           </div>
 
           <div className="academy-grid-auto" style={{ marginTop: '2rem' }}>
@@ -56,8 +53,8 @@ export default function BusinessPage() {
                   <div className="academy-link-card-row">
                     <span className="academy-link-card-icon">{space.icon}</span>
                     <div>
-                      <h3 style={{ fontSize: '1.2rem', marginBottom: '0.28rem' }}>{space.name}</h3>
-                      <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: '0.82rem', lineHeight: 1.65 }}>
+                      <h3 style={{ fontSize: '1.2rem', marginBottom: '0.3rem' }}>{space.name}</h3>
+                      <p style={{ color: 'rgba(255,255,255,0.86)', fontSize: '0.84rem', lineHeight: 1.6 }}>
                         {space.subtitle} · {space.level}
                       </p>
                     </div>
@@ -99,19 +96,24 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      <section className="premium-section" style={{ background: 'rgba(226, 232, 240, 0.42)' }}>
+      <section className="ui-section" style={{ background: 'rgba(226, 232, 240, 0.42)' }}>
         <div className="container">
           <div className="academy-overview-link-grid" style={{ marginBottom: '2rem' }}>
             {[
               {
                 href: '/business/survival/7-day',
                 title: '新人 7 天启动营',
-                description: '先让新人知道今天学什么、做什么、哪些话不能说。',
+                description: '以日任务方式完成新人第一周学习与执行闭环。',
               },
               {
-                href: '/scripts',
-                title: '话术训练库',
-                description: '按邀约、产品、跟进、异议等场景统一表达。',
+                href: '/business/survival/30-day',
+                title: '30 天经营训练',
+                description: '把首周动作升级为可持续经营节奏。',
+              },
+              {
+                href: '/business/survival/objections',
+                title: '新人疑义解答',
+                description: '围绕公司、产品、经营、分享和合规的高频问题库。',
               },
             ].map((item) => (
               <Link key={item.href} href={item.href} className="academy-overview-link">
@@ -121,10 +123,10 @@ export default function BusinessPage() {
             ))}
           </div>
 
-          <div className="premium-section-header">
-            <span className="premium-badge">Q&amp;A</span>
-            <h2 className="premium-title">新人常见疑问</h2>
-            <p className="premium-desc content-narrow">把常见问题分类沉淀下来，更利于后续扩展与统一答复。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">Q&A</span>
+            <h2 className="ui-title">新人常见疑问</h2>
+            <p className="ui-desc ui-readable">先用结构化问答消除顾虑，再进入学习和行动。</p>
           </div>
 
           <div className="mobile-card-grid" style={{ marginTop: '2rem' }}>
@@ -140,7 +142,7 @@ export default function BusinessPage() {
                     width: '44px',
                     height: '44px',
                     background: `${item.color}15`,
-                    borderRadius: '14px',
+                    borderRadius: '12px',
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -151,15 +153,14 @@ export default function BusinessPage() {
                   {item.icon}
                 </div>
                 <h3>{item.title}</h3>
-                <p>沉淀 {item.count} 个常见问题</p>
+                <p>收录 {item.count} 个高频问题</p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <ComplianceNotice description="经营内容应聚焦路径、动作和标准表达，不要使用“收益确定”“承诺收益”或其他确定性收益暗示。" />
-
+      <ComplianceNotice description="经营内容以学习路径、行动步骤和合规表达为核心，不做收益承诺，不做医疗化宣传。" />
       <Footer />
       <MobileNav activePath="/business" items={mobileNavItems} />
     </div>

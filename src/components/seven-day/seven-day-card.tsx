@@ -8,7 +8,7 @@ type SevenDayCardProps = {
 
 export default function SevenDayCard({ task }: SevenDayCardProps) {
   return (
-    <article className={`seven-day-card premium-card day-tone-${task.day % 2 === 0 ? 'blue' : 'green'}`}>
+    <article className="seven-day-card">
       <div className="seven-day-card-hero">
         <div className="seven-day-card-hero-main">
           <div className="seven-day-day-badge">DAY {task.day}</div>
@@ -18,19 +18,19 @@ export default function SevenDayCard({ task }: SevenDayCardProps) {
           </div>
         </div>
         <button type="button" disabled className="seven-day-status-btn">
-            完成按钮待接入
+          完成状态（开发中）
         </button>
       </div>
 
       <div className="seven-day-card-body">
         <div className="seven-day-learning-goal">
           <div className="seven-day-label">学习目标</div>
-          <p className="mobile-readable">{task.learningGoal}</p>
+          <p className="ui-readable">{task.learningGoal}</p>
         </div>
 
-        <div className="seven-day-highlight-card action-card">
+        <div className="seven-day-highlight-card">
           <div>
-            <div className="seven-day-label">今日推荐学习</div>
+            <div className="seven-day-label">今日推荐课程</div>
             <div className="seven-day-highlight-title">{task.lesson.title}</div>
             <div className="seven-day-highlight-meta">{task.lesson.duration}</div>
           </div>
@@ -54,16 +54,14 @@ export default function SevenDayCard({ task }: SevenDayCardProps) {
         </div>
 
         <div className="seven-day-support-grid">
-          <div className="seven-day-note-card script-good-card">
+          <div className="seven-day-note-card">
             <div className="seven-day-note-title">标准话术</div>
             {task.standardScripts.map((script) => (
-              <p key={script}>
-                {script}
-              </p>
+              <p key={script}>{script}</p>
             ))}
           </div>
 
-          <div className="seven-day-note-card script-risk-card">
+          <div className="seven-day-note-card seven-day-warning-card">
             <div className="seven-day-note-title">禁止表达</div>
             <div className="seven-day-chip-list">
               {task.forbiddenPhrases.map((phrase) => (
@@ -80,9 +78,7 @@ export default function SevenDayCard({ task }: SevenDayCardProps) {
             <div className="seven-day-note-title">作业与复盘</div>
             <ul className="seven-day-list">
               {task.homework.map((item) => (
-                <li key={item}>
-                  {item}
-                </li>
+                <li key={item}>{item}</li>
               ))}
             </ul>
           </div>

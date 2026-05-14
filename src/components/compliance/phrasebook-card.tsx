@@ -26,7 +26,7 @@ export default function PhrasebookCard({ phrase, color }: PhrasebookCardProps) {
   }
 
   return (
-    <article className="phrasebook-card premium-card" style={accentStyle}>
+    <article className="phrasebook-card ui-card-compact" style={accentStyle}>
       <div className="phrasebook-card-head">
         <span className="phrasebook-risk-tag">{riskLevelLabels[phrase.riskLevel]}</span>
         <button

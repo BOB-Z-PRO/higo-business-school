@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import type { CSSProperties } from 'react'
 import ComplianceNotice from '@/components/common/compliance-notice'
 import PhrasebookCard from '@/components/compliance/phrasebook-card'
 import Footer from '@/components/layout/footer'
@@ -28,7 +27,7 @@ export default function CompliancePhrasebookPage() {
     <div className="page-shell">
       <Header activePath="/compliance" />
 
-      <section className="module-hero module-hero-rose">
+      <section className="module-hero">
         <div className="container">
           <div className="module-hero-inner content-narrow">
             <span className="module-hero-kicker">Compliance Phrasebook</span>
@@ -40,12 +39,12 @@ export default function CompliancePhrasebookPage() {
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="ui-section">
         <div className="container">
-          <div className="premium-section-header">
-            <span className="premium-badge">Phrasebook</span>
-            <h2 className="premium-title">分类替换表达</h2>
-            <p className="premium-desc content-narrow">至少 20 条高频替换表达，支持直接复制与团队共用。</p>
+          <div className="ui-section-header">
+            <span className="ui-eyebrow">Phrasebook</span>
+            <h2 className="ui-title">分类替换表达</h2>
+            <p className="ui-desc ui-readable">至少 20 条高频替换表达，支持直接复制与团队共用。</p>
           </div>
 
           <div className="phrasebook-group-stack">
@@ -53,14 +52,9 @@ export default function CompliancePhrasebookPage() {
               <section key={category} className="phrasebook-group">
                 <div className="phrasebook-group-head">
                   <h3>{meta.title}</h3>
-                  <span
-                    className="phrasebook-group-count"
-                    style={{ ['--accent-color' as string]: meta.color } as CSSProperties}
-                  >
-                    {items.length} 条
-                  </span>
+                  <span className="phrasebook-group-count">{items.length} 条</span>
                 </div>
-                <div className="phrasebook-grid mobile-two-col">
+                <div className="phrasebook-grid">
                   {items.map((item) => (
                     <PhrasebookCard key={item.id} phrase={item} color={meta.color} />
                   ))}

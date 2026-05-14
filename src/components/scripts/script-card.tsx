@@ -21,7 +21,7 @@ export default function ScriptCard({ item, accentColor }: ScriptCardProps) {
   }
 
   return (
-    <article className="script-card premium-card" style={accentStyle}>
+    <article className="script-card ui-card" style={accentStyle}>
       <div className="script-card-head">
         <div className="script-card-heading">
           <h3>{item.title}</h3>
