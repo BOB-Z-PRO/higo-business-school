@@ -1,7 +1,7 @@
 export const homeHero = {
-  badge: 'HIGO 全球商学院',
-  title: '国际生命科技经营者成长系统',
-  subtitle: '从新人启动到团队复制，用统一认知、标准表达与合规边界支撑长期经营。',
+  badge: 'HIGO GLOBAL BUSINESS SCHOOL',
+  title: 'HIGO 全球商学院',
+  subtitle: '国际生命科技经营者成长系统',
 }
 
 export const homeSpaces = [
