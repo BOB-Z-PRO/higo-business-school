@@ -1,6 +1,6 @@
 # Codex Handoff
 
-This file is the working handoff for developing HIGO Business School in Codex.
+> Last updated: 2026-05-15
 
 ## Project Location
 
@@ -15,21 +15,30 @@ This file is the working handoff for developing HIGO Business School in Codex.
 
 HIGO Business School is not just a course list, document site, or PPT archive.
 
-The current target is a team replication system for:
-
-- newcomer onboarding
+The target is a team replication system for:
+- newcomer onboarding (7-day camp)
 - compliant scripts training
 - meeting SOP replication
 - product and company learning
 - compliance expression replacement
 - staged business operator growth
 
-The v1.1 direction is especially important: prioritize practical modules that help a team copy actions and language safely.
+The v1.1 direction prioritizes practical modules that help a team copy actions and language safely.
+
+## v1.1 Core Modules (Verified Present)
+
+| Module | Route | Status |
+|--------|-------|--------|
+| 新人7天启动营 | `/business/survival/7-day` | ✅ Present |
+| 话术训练库 | `/scripts` | ✅ Present |
+| 话术分类 | `/scripts/[category]` | ✅ Present (7 categories) |
+| 会议SOP库 | `/meetings/playbooks` | ✅ Present |
+| 会议SOP详情 | `/meetings/playbooks/[type]` | ✅ Present (3 types) |
+| 合规表达替换库 | `/compliance/phrasebook` | ✅ Present |
 
 ## Knowledge Base Sources
 
 Useful Obsidian paths:
-
 - `D:\我的文档\Obsidian Vault\HIGO商学院`
 - `D:\我的文档\Obsidian Vault\2️⃣-海购业务`
 - `D:\我的文档\Obsidian Vault\8️⃣-海购素材库`
@@ -40,7 +49,6 @@ Important note: the knowledge base contains raw business material. Some old note
 ## Compliance Rules
 
 Avoid positive promotional use of:
-
 - disease treatment or cure claims
 - guaranteed product effects
 - guaranteed income or speed claims
@@ -50,7 +58,6 @@ Avoid positive promotional use of:
 - exaggerated certification or authority claims
 
 Preferred language style:
-
 - "支持健康管理"
 - "体验因人而异"
 - "建议持续观察记录"
@@ -80,7 +87,6 @@ npm.cmd run dev
 ```
 
 Known current behavior:
-
 - `npm.cmd run build` passes locally.
 - During build, Prisma may log Neon connection errors if the database cannot be reached from the environment.
 - The build script still exits successfully in the current setup.
@@ -88,17 +94,14 @@ Known current behavior:
 ## Deployment
 
 GitHub repository:
-
 - `BOB-Z-PRO/higo-business-school`
 - default branch: `main`
 
 Vercel:
-
 - local `.vercel/project.json` is already linked to the Vercel project `higo-business-school`
 - production URL: `https://higo-business-school.vercel.app/`
 
 GitHub Actions:
-
 - workflow file: `.github/workflows/deploy.yml`
 - push to `main` should trigger build and Vercel deployment
 
@@ -110,55 +113,39 @@ The local PowerShell environment may not currently have `git` on PATH. If local 
 
 Do not commit `.env`, local secrets, generated cache files, or unrelated local artifacts.
 
-## Existing Product Modules
+## UI Direction (Updated 2026-05-15)
 
-Core v1.1 modules already present:
+Current visual system: `academy-*` CSS classes
+- Primary hero: deep navy gradient with subtle accent gradients
+- No DNA/cell/particle animations (removed)
+- Mobile-first, clean card-based layout
+- Warm white background (#F8F6F0)
 
-- `/business/survival/7-day`
-- `/scripts`
-- `/scripts/[category]`
-- `/meetings/playbooks`
-- `/meetings/playbooks/[type]`
-- `/compliance/phrasebook`
+Key CSS files:
+- `src/app/globals.css` - contains all styles (academy-*, premium-*, hero-*, ui-*)
 
-Supporting data/components:
+Important navigation changes (2026-05-15):
+- Header: v1.1 modules now appear first in primaryNavLinks
+- MobileNav: now shows v1.1 core modules as main 4 items
+- Footer: v1.1 core modules grouped separately
 
-- `src/lib/seven-day-data.ts`
-- `src/lib/scripts-data.ts`
-- `src/lib/meeting-playbooks-data.ts`
-- `src/lib/compliance-phrasebook-data.ts`
-- `src/components/seven-day/*`
-- `src/components/scripts/script-card.tsx`
-- `src/components/meetings/meeting-playbook-card.tsx`
-- `src/components/compliance/phrasebook-card.tsx`
+## Known Issues
 
-## Current Known Issues
+1. `globals.css` contains multiple style systems (hero-*, premium-*, academy-*, ui-*) - consolidation ongoing
+2. Some pages still use inline styles
+3. Old knowledge base content needs compliance rewriting before use
+4. Build logs show database connection failures when Neon is unreachable
 
-- Multiple visual systems coexist in `src/app/globals.css`: old technology/hero styles, `premium-*`, `academy-*`, and newer `ui-*`.
-- Some pages still use many inline styles.
-- Some older content uses high-risk language and needs compliance rewriting.
-- Build logs show database connection failures when Neon is unreachable, even though the build exits successfully.
-- The current system feels partly migrated: route coverage is broad, but UI consistency and content governance need more work.
+## Recent Changes (2026-05-15)
 
-## Recommended Next Work
-
-1. Establish `ui-*` as the current visual standard.
-2. Refactor the highest-impact pages first:
-   - `/`
-   - `/business/survival/7-day`
-   - `/scripts`
-   - `/scripts/[category]`
-   - `/meetings/playbooks`
-   - `/compliance/phrasebook`
-3. Reduce old hero/premium/academy style conflicts.
-4. Continue compliance rewriting of course and product content.
-5. Improve database fallback behavior and deployment logs.
-6. After each meaningful change, run `npm.cmd run build`.
+1. Updated `primaryNavLinks` in `site-data.ts` - v1.1 modules now appear first
+2. Updated `mobileNavItems` - v1.1 core modules are now the main 4 items
+3. Updated `footerGroups` - v1.1 core modules grouped under "v1.1 核心模块"
+4. Updated `ROUTE_MAP.md` - reflects actual v1.1 routing structure
 
 ## Working Principle
 
 When using the Obsidian knowledge base:
-
 1. read the relevant note
 2. extract the intent
 3. remove or downgrade risky claims

@@ -8,23 +8,33 @@ export type FooterGroup = {
   links: NavLink[]
 }
 
+// v1.1 主导航 - 核心路径优先
 export const primaryNavLinks: NavLink[] = [
-  { href: '/company', label: '公司篇' },
-  { href: '/products', label: '产品篇' },
+  { href: '/business/survival/7-day', label: '新人启动' },
+  { href: '/scripts', label: '话术训练' },
+  { href: '/meetings/playbooks', label: '会议SOP' },
+  { href: '/compliance/phrasebook', label: '合规表达' },
+  { href: '/products', label: '产品学院' },
   { href: '/business', label: '经营篇' },
-  { href: '/meetings', label: '会议中心' },
-  { href: '/resources', label: '素材中心' },
-  { href: '/compliance', label: '合规中心' },
-  { href: '/about', label: '关于 HIGO' },
+  { href: '/company', label: '公司篇' },
 ]
 
 export const footerGroups: FooterGroup[] = [
   {
+    title: 'v1.1 核心模块',
+    links: [
+      { href: '/business/survival/7-day', label: '新人7天启动营' },
+      { href: '/scripts', label: '话术训练库' },
+      { href: '/meetings/playbooks', label: '会议SOP库' },
+      { href: '/compliance/phrasebook', label: '合规表达替换库' },
+    ],
+  },
+  {
     title: '学习入口',
     links: [
-      { href: '/company', label: '公司篇' },
-      { href: '/products', label: '产品篇' },
+      { href: '/products', label: '产品学院' },
       { href: '/business', label: '经营篇' },
+      { href: '/company', label: '公司篇' },
       { href: '/meetings', label: '会议中心' },
     ],
   },
@@ -37,20 +47,20 @@ export const footerGroups: FooterGroup[] = [
       { href: '/login', label: '会员登录' },
     ],
   },
-  {
-    title: '联系渠道',
-    links: [
-      { href: 'mailto:support@higo.com', label: 'support@higo.com' },
-      { href: 'tel:400-888-8888', label: '400-888-8888' },
-      { href: 'https://www.higo.com', label: 'www.higo.com' },
-    ],
-  },
+]
+
+// v1.1 四大核心模块 - 移动端主入口
+export const v11CoreModules = [
+  { href: '/business/survival/7-day', label: '7天启动', iconClassName: 'fas fa-calendar-check' },
+  { href: '/scripts', label: '话术库', iconClassName: 'fas fa-comments' },
+  { href: '/meetings/playbooks', label: '会议SOP', iconClassName: 'fas fa-clipboard-list' },
+  { href: '/compliance/phrasebook', label: '合规库', iconClassName: 'fas fa-shield-alt' },
 ]
 
 export const mobileNavItems = [
   { href: '/', label: '首页', iconClassName: 'fas fa-home' },
-  { href: '/company', label: '公司', iconClassName: 'fas fa-building' },
-  { href: '/products', label: '产品', iconClassName: 'fas fa-capsules' },
+  { href: '/business/survival/7-day', label: '7天启动', iconClassName: 'fas fa-calendar-check' },
+  { href: '/scripts', label: '话术库', iconClassName: 'fas fa-comments' },
   { href: '/business', label: '经营', iconClassName: 'fas fa-chart-line' },
 ]
 
