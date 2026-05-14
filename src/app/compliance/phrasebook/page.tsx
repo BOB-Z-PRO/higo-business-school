@@ -12,8 +12,7 @@ import { mobileNavItems } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: '合规表达替换库 | HIGO 全球商学院',
-  description:
-    '按产品、收益、案例、公司和医疗等类别整理的表达替换库，帮助团队快速识别风险说法并改成合规表达。',
+  description: '按产品、收益、案例、公司和医疗高风险类别整理的表达替换工具库。',
 }
 
 export default function CompliancePhrasebookPage() {
@@ -24,36 +23,37 @@ export default function CompliancePhrasebookPage() {
   }))
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
+    <div className="min-h-screen academy-shell">
       <Header activePath="/compliance" />
 
-      <section style={{ background: 'linear-gradient(135deg, #E53E3E 0%, #FC8181 100%)', color: 'white', padding: '72px 0' }}>
+      <section className="academy-hero academy-hero-compliance">
         <div className="container">
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '12px' }}>合规表达替换库</h1>
-          <p style={{ fontSize: '1.04rem', opacity: 0.92, lineHeight: 1.8, maxWidth: '760px' }}>
-            与其只记“不能说什么”，不如把“可以怎么说”沉淀成标准库。这里按照产品、收益、案例、公司和医疗高风险五类集中展示替换表达。
-          </p>
+          <div className="academy-hero-content">
+            <span className="academy-hero-badge">Compliance Toolkit</span>
+            <h1 className="academy-hero-title">合规表达替换库</h1>
+            <p className="academy-hero-subtitle">
+              “不要说 / 可以说”对照清晰，红色只用于风险提醒，支持团队快速复制与统一口径。
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section academy-section">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Phrasebook</span>
             <h2 className="section-title">分类替换表达</h2>
-            <p className="section-desc">至少 20 条高频替换表达，支持直接复制与团队共用。</p>
+            <p className="section-desc">按风险类别聚合高频表达，便于培训、复盘与现场纠偏。</p>
           </div>
 
-          <div style={{ display: 'grid', gap: '28px' }}>
+          <div className="academy-stack academy-stack-lg">
             {grouped.map(({ category, meta, items }) => (
               <section key={category}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text-dark)' }}>{meta.title}</h3>
-                  <span style={{ background: `${meta.color}15`, color: meta.color, padding: '6px 12px', borderRadius: '999px', fontSize: '0.8rem', fontWeight: 700 }}>
-                    {items.length} 条
-                  </span>
+                <div className="academy-list-header">
+                  <h3>{meta.title}</h3>
+                  <span className="academy-pill">{items.length} 条</span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '18px' }}>
+                <div className="academy-category-grid">
                   {items.map((item) => (
                     <PhrasebookCard key={item.id} phrase={item} color={meta.color} />
                   ))}
@@ -64,7 +64,7 @@ export default function CompliancePhrasebookPage() {
         </div>
       </section>
 
-      <ComplianceNotice description="所有高风险表达如果必须出现，只能出现在“不要说”“禁止表达”或风险提示语境中，不能作为正向宣传内容。" />
+      <ComplianceNotice description="高风险表述如果必须出现，只能用于“不要说/风险提示”语境，不可作为正向宣传内容。" />
 
       <Footer />
       <MobileNav activePath="/compliance" items={mobileNavItems} />

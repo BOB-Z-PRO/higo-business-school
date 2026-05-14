@@ -8,10 +8,7 @@ type HeaderProps = {
 }
 
 function isActiveLink(activePath: string | undefined, href: string) {
-  if (!activePath) {
-    return false
-  }
-
+  if (!activePath) return false
   return activePath === href || (href !== '/' && activePath.startsWith(href))
 }
 

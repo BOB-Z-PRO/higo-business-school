@@ -17,65 +17,44 @@ import {
 import { mobileNavItems } from '@/lib/site-data'
 
 export const metadata: Metadata = {
-  title: 'HIGO 全球商学院 | 统一认知与标准学习入口',
+  title: 'HIGO 全球商学院 | 国际生命科技经营者成长系统',
   description:
-    'HIGO 全球商学院首页，聚合公司认知、产品学习、经营路径、会议支持与合规入口，帮助伙伴建立更清晰的成长路线。',
+    'HIGO 全球商学院首页，聚合公司认知、产品学习、经营路径、会议 SOP 与合规表达入口。',
 }
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen academy-shell">
       <Header activePath="/" rightSlot={<ClientAuthStatus />} />
 
-      <section className="hero" style={{ background: 'linear-gradient(135deg, #1A365D 0%, #2C5282 100%)' }}>
-        <div className="hero-particles">
-          <div className="dna-container">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="dna-strand"></div>
-            ))}
-          </div>
-          <div className="cells-container">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className={`cell cell-${index + 1}`}></div>
-            ))}
-          </div>
-          <div className="molecules-container">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index} className={`molecule mol-${index + 1}`}></div>
-            ))}
-          </div>
-        </div>
+      <section className="academy-hero">
         <div className="container">
-          <div className="hero-content">
-            <span className="hero-badge">{homeHero.badge}</span>
-            <h1 className="hero-title">{homeHero.title}</h1>
-            <div className="hero-divider"></div>
-            <p className="hero-subtitle">{homeHero.subtitle}</p>
-            <div className="hero-buttons">
-              <Link href="/business/survival" className="btn btn-primary btn-lg">
-                从新人路径开始
+          <div className="academy-hero-content">
+            <span className="academy-hero-badge">{homeHero.badge}</span>
+            <h1 className="academy-hero-title">{homeHero.title}</h1>
+            <p className="academy-hero-subtitle">{homeHero.subtitle}</p>
+            <div className="academy-hero-actions">
+              <Link href="/business/survival/7-day" className="academy-btn academy-btn-primary">
+                进入新人7天启动营
               </Link>
-              <Link href="/business" className="btn btn-secondary btn-lg">
-                进入经营篇
-              </Link>
-              <Link href="/products" className="btn btn-secondary btn-lg">
-                查看产品体系
+              <Link href="/business" className="academy-btn academy-btn-secondary">
+                查看三大成长路径
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section academy-section">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Growth Path</span>
-            <h2 className="section-title">三大空间成长地图</h2>
-            <p className="section-desc">从新人到团队复制者，先搭建清晰路径，再逐步放大动作。</p>
+            <h2 className="section-title">三大成长路径</h2>
+            <p className="section-desc">从生存到经营再到生命成长，建立长期可复制的学习与实战节奏。</p>
           </div>
           <div className="home-spaces-grid">
             {homeSpaces.map((space) => (
-              <div key={space.id} className={`home-space-card ${space.id}`}>
+              <div key={space.id} className={`home-space-card academy-card ${space.id}`}>
                 <div className="home-space-header">
                   <div className="home-space-icon">{space.icon}</div>
                   <div>
@@ -92,7 +71,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <Link href={`/business/${space.id}`} className="home-space-btn">
-                  进入学习 →
+                  进入学习
                 </Link>
               </div>
             ))}
@@ -100,12 +79,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section academy-section-alt">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Learning</span>
             <h2 className="section-title">四大学习入口</h2>
-            <p className="section-desc">从认知、产品、经营和会议四个维度开始建立统一表达。</p>
+            <p className="section-desc">公司篇、产品篇、经营篇与会议中心一体化联动。</p>
           </div>
           <div className="learning-entrances">
             {learningEntrances.map((entry) => (
@@ -119,12 +98,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section academy-section">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Newcomer</span>
-            <h2 className="section-title">新人先看什么</h2>
-            <p className="section-desc">把最基础、最容易跑偏的内容前置，帮助团队更快对齐。</p>
+            <h2 className="section-title">新人优先入口</h2>
+            <p className="section-desc">先完成基础认知与标准表达，再进入进阶训练。</p>
           </div>
           <div className="newcomer-cards">
             {newcomerLinks.map((item) => (
@@ -138,12 +117,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section" style={{ background: 'var(--bg-gray)' }}>
+      <section className="section academy-section-alt">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Courses</span>
             <h2 className="section-title">精选课程</h2>
-            <p className="section-desc">围绕认知统一、产品理解与会议应用整理的重点内容。</p>
+            <p className="section-desc">聚焦认知统一、产品理解、会议转化与合规边界。</p>
           </div>
           <div className="featured-courses">
             {featuredCourses.map((course) => (
@@ -153,12 +132,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section academy-section">
         <div className="container">
           <div className="section-header">
             <span className="section-badge">Meetings</span>
-            <h2 className="section-title">会议中心精选</h2>
-            <p className="section-desc">帮助团队保持统一表达与共享学习节奏。</p>
+            <h2 className="section-title">会议 SOP 精选</h2>
+            <p className="section-desc">把会议流程、主持脚本与复盘动作沉淀成可复用模板。</p>
           </div>
           <div className="meeting-cards">
             {featuredMeetings.map((meeting) => (
@@ -175,7 +154,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ComplianceNotice description="请避免夸大宣传、疾病治疗承诺和收益确定性表达。所有案例分享都应使用统一资料，并明确“因人而异”的前提。" />
+      <ComplianceNotice description="请避免夸大宣传、疾病治疗承诺和收益确定性表达。所有案例分享必须基于统一资料，并明确“因人而异”。" />
 
       <Footer />
       <MobileNav activePath="/" items={mobileNavItems} />

@@ -14,7 +14,9 @@ export default function Footer() {
                 <div className="footer-logo-sub">HIGO Global Business School</div>
               </div>
             </div>
-            <p className="footer-desc">围绕统一认知、标准学习与系统复制，沉淀更清晰、更稳健的学习与经营路径。</p>
+            <p className="footer-desc">
+              围绕统一认知、标准学习与系统复制，沉淀更清晰、更稳健的生命科技经营成长路径。
+            </p>
           </div>
           {footerGroups.map((group) => (
             <div key={group.title} className="footer-links-group">
@@ -31,7 +33,7 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <div>© 2026 HIGO 全球商学院. All rights reserved.</div>
-          <div>HIGO 全球生物科技集团 · 培训中心</div>
+          <div>HIGO 全球生命科技集团 · 培训中心</div>
         </div>
       </div>
     </footer>
