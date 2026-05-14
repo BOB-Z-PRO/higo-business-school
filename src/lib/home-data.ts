@@ -1,59 +1,152 @@
 export const homeHero = {
   badge: 'HIGO 全球商学院',
-  title: '经营者成长与复制系统',
-  subtitle: '把新人启动、产品学习、经营训练、会议复制和合规表达整理成可执行路径。',
+  title: '国际生命科技经营者成长系统',
+  subtitle: '从新人启动到团队复制，用统一认知、标准表达与合规边界支撑长期经营。',
 }
 
 export const homeSpaces = [
   {
     id: 'survival',
     icon: '01',
-    name: '生存空间',
-    tag: '新人启动期',
-    description: '完成第一轮认知、体验、开口和复盘，建立稳定起步节奏。',
-    goals: ['认识公司', '认识产品', '学习合规', '完成首轮邀约'],
+    name: '新人7天启动营',
+    tag: '新人第一入口',
+    description: '7天完成认知、表达、行动与复盘闭环，建立稳定起步节奏。',
+    goals: ['每日任务', '标准话术', '行动清单', '合规底线'],
+    href: '/business/survival/7-day',
   },
   {
-    id: 'living',
+    id: 'scripts',
     icon: '02',
-    name: '生活空间',
-    tag: '稳定经营期',
-    description: '围绕持续分享、会后跟进和带教动作建立可复用经营节奏。',
-    goals: ['稳定分享', '借力会议', '带动新人', '形成复盘'],
+    name: '话术训练库',
+    tag: '表达训练',
+    description: '按邀约、产品、机会、跟进等场景训练经营者表达稳定性。',
+    goals: ['分类训练', '推荐说法', '不建议说法', '复制应用'],
+    href: '/scripts',
   },
   {
-    id: 'life',
+    id: 'playbooks',
     icon: '03',
-    name: '生命空间',
-    tag: '团队复制期',
-    description: '建立组织视角、会议系统和标准化带教方法，支持长期复制。',
-    goals: ['组织思维', '会议系统', '讲师培养', '文化复制'],
+    name: '会议SOP库',
+    tag: '团队复制工具',
+    description: '沉淀主持流程、主讲结构与会后复盘动作，提升会议复制效率。',
+    goals: ['流程模板', '主持稿', '复盘表', '标准化执行'],
+    href: '/meetings/playbooks',
+  },
+  {
+    id: 'compliance',
+    icon: '04',
+    name: '合规表达替换库',
+    tag: '全员风控工具',
+    description: '建立“不要说 / 可以说”对照库，降低高风险表达。',
+    goals: ['风险识别', '替换表达', '场景示例', '团队统一口径'],
+    href: '/compliance/phrasebook',
   },
 ]
 
 export const learningEntrances = [
-  { href: '/business/survival/7-day', icon: '7D', title: '新人 7 天启动营', description: '每天明确学什么、说什么、做什么。' },
-  { href: '/scripts', icon: 'SC', title: '话术训练库', description: '按邀约、产品、机会与异议场景训练表达。' },
-  { href: '/meetings/playbooks', icon: 'SOP', title: '会议 SOP 库', description: '把会议转成可复制流程。' },
-  { href: '/compliance/phrasebook', icon: 'OK', title: '合规表达替换库', description: '把高风险说法改成稳健表达。' },
+  {
+    href: '/business/survival/7-day',
+    icon: '7D',
+    title: '新人7天启动营',
+    description: '新人第一入口',
+  },
+  {
+    href: '/scripts',
+    icon: 'SC',
+    title: '话术训练库',
+    description: '经营者表达训练',
+  },
+  {
+    href: '/meetings/playbooks',
+    icon: 'SOP',
+    title: '会议SOP库',
+    description: '团队复制工具',
+  },
+  {
+    href: '/compliance/phrasebook',
+    icon: 'OK',
+    title: '合规表达替换库',
+    description: '全员风控工具',
+  },
 ]
 
 export const newcomerLinks = [
-  { href: '/company', number: '01', title: '先建立公司认知', description: '知道 HIGO 是什么、从哪里来、为什么做。' },
-  { href: '/products', number: '02', title: '再理解产品边界', description: '讲机制、讲体验，不做医疗化承诺。' },
-  { href: '/business/survival/7-day', number: '03', title: '进入 7 天启动营', description: '用日任务完成第一轮学习闭环。' },
-  { href: '/scripts', number: '04', title: '练标准话术', description: '先合规，再邀约，再跟进。' },
-  { href: '/compliance/phrasebook', number: '05', title: '先过合规底线', description: '避免疗效、收益、绝对化表达。' },
+  {
+    href: '/business/survival/7-day',
+    number: '01',
+    title: '新人7天启动营',
+    description: '先建立第一周执行闭环。',
+  },
+  {
+    href: '/scripts',
+    number: '02',
+    title: '话术训练库',
+    description: '先练稳定表达再做转化。',
+  },
+  {
+    href: '/meetings/playbooks',
+    number: '03',
+    title: '会议SOP库',
+    description: '借力会议系统提升效率。',
+  },
+  {
+    href: '/compliance/phrasebook',
+    number: '04',
+    title: '合规表达替换库',
+    description: '先过风控边界再做传播。',
+  },
+  {
+    href: '/products',
+    number: '05',
+    title: '产品学院',
+    description: '理解产品定位与场景边界。',
+  },
 ]
 
 export const featuredCourses = [
-  { href: '/course/N-01', tag: '新人必修', title: 'HIGO 是什么', description: '一节课讲清公司定位与基础认知。', meta: '15 分钟 · 视频' },
-  { href: '/products', tag: '产品基础', title: '四大产品认知', description: '先学产品方向，再进入场景表达。', meta: '产品篇 · 入口' },
-  { href: '/business/survival/objections', tag: '疑义处理', title: '新人常见疑问', description: '用标准表达稳定回应高频质疑。', meta: '经营篇 · 训练' },
+  {
+    href: '/business/survival/7-day',
+    tag: '行动训练',
+    title: '7天行动训练路径',
+    description: '按天执行学习、表达、行动和复盘任务。',
+    meta: '7天 · 每日任务',
+  },
+  {
+    href: '/scripts',
+    tag: '表达训练',
+    title: '高频场景话术演练',
+    description: '针对邀约、产品、机会说明和跟进场景进行实战训练。',
+    meta: '场景化 · 可复制',
+  },
+  {
+    href: '/meetings/playbooks',
+    tag: '会议复制',
+    title: '会议SOP执行手册',
+    description: '统一主持流程、主讲结构与会后复盘动作。',
+    meta: 'SOP · 团队协同',
+  },
 ]
 
 export const featuredMeetings = [
-  { href: '/meetings/playbooks/newcomer', icon: 'N', title: '新人启动会', description: '帮助新人明确第一周行动。', meta: '30 分钟 · SOP' },
-  { href: '/meetings/playbooks/product', icon: 'P', title: '产品分享会', description: '聚焦产品定位与表达边界。', meta: '40 分钟 · SOP' },
-  { href: '/meetings/playbooks/opportunity', icon: 'O', title: '机会说明会', description: '讲清路径与学习方式，不做收益承诺。', meta: '45 分钟 · SOP' },
+  {
+    href: '/meetings/playbooks/newcomer',
+    icon: 'N',
+    title: '新人启动会',
+    description: '明确新人第一周训练重点与会后动作。',
+    meta: '30分钟 · SOP',
+  },
+  {
+    href: '/meetings/playbooks/product',
+    icon: 'P',
+    title: '产品分享会',
+    description: '围绕产品定位、体验逻辑和表达边界组织分享。',
+    meta: '40分钟 · SOP',
+  },
+  {
+    href: '/meetings/playbooks/opportunity',
+    icon: 'O',
+    title: '机会说明会',
+    description: '讲清路径与学习方式，不做收益确定性承诺。',
+    meta: '45分钟 · SOP',
+  },
 ]
