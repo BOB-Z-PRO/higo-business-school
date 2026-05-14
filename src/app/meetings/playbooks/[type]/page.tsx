@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import type { CSSProperties } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import ComplianceNotice from '@/components/common/compliance-notice'
@@ -46,90 +45,86 @@ export default function MeetingPlaybookDetailPage({ params }: MeetingPlaybookDet
   }
 
   const meta = meetingPlaybookTypeMeta[playbook.type]
-  const heroStyle = { ['--module-accent' as string]: meta.color } as CSSProperties
 
   return (
-    <div className="page-shell">
+    <div className="min-h-screen" style={{ background: 'var(--bg-light)' }}>
       <Header activePath="/meetings" />
 
-      <section className="module-hero module-hero-accent" style={heroStyle}>
+      <section style={{ background: `linear-gradient(135deg, ${meta.color} 0%, #2D3748 100%)`, color: 'white', padding: '72px 0' }}>
         <div className="container">
-          <Link href="/meetings/playbooks" className="module-hero-back-link">
+          <Link href="/meetings/playbooks" style={{ display: 'inline-flex', marginBottom: '18px', background: 'rgba(255,255,255,0.15)', padding: '8px 14px', borderRadius: '999px', fontSize: '0.84rem', fontWeight: 700 }}>
             返回会议 SOP 库
           </Link>
-          <div className="module-hero-inner">
-            <span className="module-hero-kicker">{meta.title}</span>
-            <h1>{playbook.title}</h1>
-            <p className="module-hero-description">{playbook.meetingGoal}</p>
-          </div>
+          <h1 style={{ fontSize: '2.4rem', fontWeight: 800, marginBottom: '12px' }}>{playbook.title}</h1>
+          <p style={{ fontSize: '1.02rem', opacity: 0.92, lineHeight: 1.8, maxWidth: '780px' }}>{playbook.meetingGoal}</p>
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="section">
         <div className="container">
-          <div className="overview-stat-grid mobile-two-col">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
             {[
               ['适合对象', playbook.targetAudience],
               ['会议时长', playbook.duration],
               ['会议类型', meta.title],
             ].map(([title, desc]) => (
-              <div key={title} className="overview-stat-card premium-card">
-                <div className="overview-stat-title">{title}</div>
-                <p>{desc}</p>
+              <div key={title} style={{ background: 'white', borderRadius: '16px', padding: '20px', boxShadow: '0 8px 24px rgba(0,0,0,0.05)' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: 700, marginBottom: '8px' }}>{title}</div>
+                <p style={{ color: 'var(--text-gray)', fontSize: '0.92rem', lineHeight: 1.7 }}>{desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="playbook-detail-stack">
-            <section className="playbook-detail-card premium-card">
-              <h2>标准流程</h2>
-              <div className="playbook-detail-timeline">
+          <div style={{ display: 'grid', gap: '20px' }}>
+            <section style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '14px' }}>标准流程</h2>
+              <div style={{ display: 'grid', gap: '10px' }}>
                 {playbook.agenda.map((item, index) => (
-                  <div key={item} className="playbook-detail-step">
-                    <span className="playbook-detail-step-num">{index + 1}</span>
+                  <div key={item} style={{ display: 'flex', gap: '12px', color: 'var(--text-gray)', lineHeight: 1.7 }}>
+                    <span style={{ color: meta.color, fontWeight: 700 }}>{index + 1}.</span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section className="playbook-detail-card premium-card">
-              <h2>主持人开场</h2>
-              <p className="mobile-readable">{playbook.hostOpening}</p>
+            <section style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '14px' }}>主持人开场</h2>
+              <p style={{ color: 'var(--text-gray)', lineHeight: 1.9 }}>{playbook.hostOpening}</p>
             </section>
 
-            <section className="playbook-detail-card premium-card">
-              <h2>主讲结构</h2>
-              <ul className="playbook-detail-list">
+            <section style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '14px' }}>主讲结构</h2>
+              <ul style={{ display: 'grid', gap: '10px' }}>
                 {playbook.speakerOutline.map((item) => (
-                  <li key={item}>
+                  <li key={item} style={{ color: 'var(--text-gray)', lineHeight: 1.8 }}>
                     {item}
                   </li>
                 ))}
               </ul>
             </section>
 
-            <section className="playbook-detail-card premium-card">
-              <h2>案例模板</h2>
-              <p className="mobile-readable">{playbook.caseTemplate}</p>
+            <section style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+              <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '14px' }}>案例模板</h2>
+              <p style={{ color: 'var(--text-gray)', lineHeight: 1.9 }}>{playbook.caseTemplate}</p>
             </section>
 
-            <section className="playbook-detail-grid">
-              <div className="playbook-detail-card premium-card">
-                <h2>会后跟进</h2>
-                <ul className="playbook-detail-list">
+            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+              <div style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+                <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '14px' }}>会后跟进</h2>
+                <ul style={{ display: 'grid', gap: '10px' }}>
                   {playbook.followUpScripts.map((item) => (
-                    <li key={item}>
+                    <li key={item} style={{ color: 'var(--text-gray)', lineHeight: 1.8 }}>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="playbook-detail-card premium-card">
-                <h2>复盘清单</h2>
-                <ul className="playbook-detail-list">
+              <div style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+                <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '14px' }}>复盘清单</h2>
+                <ul style={{ display: 'grid', gap: '10px' }}>
                   {playbook.reviewChecklist.map((item) => (
-                    <li key={item}>
+                    <li key={item} style={{ color: 'var(--text-gray)', lineHeight: 1.8 }}>
                       {item}
                     </li>
                   ))}
@@ -137,22 +132,22 @@ export default function MeetingPlaybookDetailPage({ params }: MeetingPlaybookDet
               </div>
             </section>
 
-            <section className="playbook-detail-grid">
-              <div className="playbook-detail-card premium-card playbook-detail-risk">
-                <h2>合规提醒</h2>
-                <ul className="playbook-detail-list">
+            <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
+              <div style={{ background: '#FFF5F5', borderRadius: '20px', padding: '24px', border: '1px solid #FEB2B2' }}>
+                <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '14px', color: '#C53030' }}>合规提醒</h2>
+                <ul style={{ display: 'grid', gap: '10px' }}>
                   {playbook.complianceNotes.map((item) => (
-                    <li key={item}>
+                    <li key={item} style={{ color: '#9B2C2C', lineHeight: 1.8 }}>
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="playbook-detail-card premium-card">
-                <h2>相关资料</h2>
-                <ul className="playbook-detail-list">
+              <div style={{ background: 'white', borderRadius: '20px', padding: '24px', boxShadow: '0 10px 28px rgba(0,0,0,0.05)' }}>
+                <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '14px' }}>相关资料</h2>
+                <ul style={{ display: 'grid', gap: '10px' }}>
                   {playbook.relatedMaterials.map((item) => (
-                    <li key={item}>
+                    <li key={item} style={{ color: 'var(--text-gray)', lineHeight: 1.8 }}>
                       {item}
                     </li>
                   ))}

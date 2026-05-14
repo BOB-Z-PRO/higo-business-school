@@ -8,7 +8,7 @@ export default function ClientAuthStatus() {
 
   if (!session) {
     return (
-      <Link href="/login" className="nav-link nav-link-cta">
+      <Link href="/login" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>
         登录
       </Link>
     )
@@ -16,13 +16,13 @@ export default function ClientAuthStatus() {
 
   return (
     <>
-      <Link href="/profile" className="nav-link nav-link-ghost">
+      <Link href="/profile" className="nav-link" style={{ color: '#38A169', fontWeight: 600 }}>
         {session.user?.name || '我的学习'}
       </Link>
       <button
         onClick={() => signOut({ callbackUrl: '/' })}
-        className="nav-link nav-link-danger"
-        type="button"
+        className="nav-link"
+        style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#E53E3E' }}
       >
         退出
       </button>

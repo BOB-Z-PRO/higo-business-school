@@ -14,13 +14,27 @@ export default function ComplianceNotice({
   ctaLabel = '查看合规规范',
 }: ComplianceNoticeProps) {
   return (
-    <section className="ui-section compliance-notice-section">
+    <section
+      className="section"
+      style={{ background: 'linear-gradient(135deg, #E53E3E 0%, #FC8181 100%)', color: 'white' }}
+    >
       <div className="container">
-        <div className="compliance-notice-card content-narrow">
-          <span className="ui-eyebrow">Compliance</span>
-          <h2 className="ui-title">{title}</h2>
-          <p className="ui-desc ui-readable">{description}</p>
-          <Link href={ctaHref} className="btn btn-text">
+        <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: '16px' }}>{title}</h2>
+          <p style={{ fontSize: '1.125rem', lineHeight: 1.7, marginBottom: '24px', opacity: 0.95 }}>
+            {description}
+          </p>
+          <Link
+            href={ctaHref}
+            style={{
+              display: 'inline-block',
+              background: 'white',
+              color: '#E53E3E',
+              padding: '12px 32px',
+              borderRadius: '8px',
+              fontWeight: 600,
+            }}
+          >
             {ctaLabel}
           </Link>
         </div>

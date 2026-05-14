@@ -10,14 +10,11 @@ type CourseCardProps = {
 
 export default function CourseCard({ href, tag, title, description, meta }: CourseCardProps) {
   return (
-    <Link href={href} className="featured-course-card ui-card-compact">
-      <div className="featured-course-head">
-        <div className="featured-course-tag">{tag}</div>
-        <span className="featured-course-meta">{meta}</span>
-      </div>
+    <Link href={href} className="featured-course-card">
+      <div className="featured-course-tag">{tag}</div>
       <h4>{title}</h4>
       <p>{description}</p>
-      <span className="featured-course-link">进入内容</span>
+      <span className="featured-course-meta">{meta}</span>
     </Link>
   )
 }
