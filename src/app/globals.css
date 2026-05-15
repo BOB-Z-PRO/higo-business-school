@@ -3318,3 +3318,187 @@ body {
     font-size: 12px;
   }
 }
+
+/* ========================================
+   UI System - Missing Definitions
+   (Supporting pages that use ui-* classes)
+   ======================================== */
+
+.page-shell {
+  min-height: 100vh;
+  background: var(--academy-warm, #F8F6F0);
+}
+
+.module-hero {
+  background: linear-gradient(140deg, var(--academy-navy, #0B1F3A), var(--academy-indigo, #102A43));
+  color: #fff;
+  padding: 72px 0 64px;
+}
+
+.module-hero-inner {
+  max-width: 760px;
+}
+
+.module-hero-kicker {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.module-hero-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.92;
+  margin-top: 14px;
+}
+
+.module-hero-description {
+  font-size: 1rem;
+  opacity: 0.85;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.ui-section {
+  padding: 64px 0;
+}
+
+.ui-section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ui-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--academy-teal, #00A6A6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.ui-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--academy-navy, #0B1F3A);
+  margin-top: 8px;
+}
+
+.ui-readable {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: var(--text-gray, #64748B);
+}
+
+.ui-action-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.ui-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.ui-mobile-two {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.seven-day-hero-grid {
+  gap: 20px;
+}
+
+.seven-day-summary-card,
+.seven-day-next-stage {
+  background: #fff;
+  border: 1px solid var(--academy-line, #E2E8F0);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.seven-day-summary-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--academy-navy, #0B1F3A);
+  margin: 12px 0;
+}
+
+.seven-day-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seven-day-stack-card {
+  background: #fff;
+  border: 1px solid var(--academy-line, #E2E8F0);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.seven-day-note-title {
+  font-weight: 700;
+  color: var(--academy-navy, #0B1F3A);
+  font-size: 0.9375rem;
+  min-width: 48px;
+}
+
+.overview-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+.overview-stat-card {
+  background: #fff;
+  border: 1px solid var(--academy-line, #E2E8F0);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.overview-stat-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--academy-gold, #C9A227);
+}
+
+@media (max-width: 1024px) {
+  .overview-stat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ui-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .overview-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ui-mobile-two {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .module-hero {
+    padding: 52px 0 44px;
+  }
+
+  .module-hero-subtitle {
+    font-size: 1rem;
+  }
+}
